@@ -22,6 +22,7 @@ define(
    "3-loadtemplates",
    "4-login",
    "5-user-data-storage"],
+   
 function(
   firebase, 
   dependencies, 
