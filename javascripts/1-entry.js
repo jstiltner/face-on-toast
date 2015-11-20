@@ -17,7 +17,6 @@ require.config({
 });
 
 define(
-
   ["dependencies", "firebase", "login-form", "userStorage", "3-loadtemplates", "complete-profile", "adduser", "auth-storage", "addtnlinfo"], 
   function(dependencies, firebase, loginForm, userStorage, templates, completeProfile, adduser, auth, additionalinfo) {
 })
