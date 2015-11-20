@@ -3,6 +3,7 @@ define(function(require) {
   //handlebars templates
   var loadTemplate = require("3-loadtemplates");
   var userStorage = require("5-user-data-storage");
+  var populateNewUserView = require("populateNewUserView");
 
   //get a reference to our Firebase app
   var ref = new Firebase("https://faceontoast.firebaseio.com");
@@ -18,6 +19,10 @@ define(function(require) {
         userStorage.setUser(userData);
         console.log("Successfully created user account with uid:", userData.uid);
         console.log("Successfully created user account:", userData);
+        // *** go to new user view ***//
+        $("#view-login").addClass("hidden");
+        $("#navBar").removeClass("hidden");
+        $("#register").click(populateNewUserView.loadNewUserView());
       }
     });
   });//end register new user

@@ -8,5 +8,5 @@ define(function(require) {
     getUser: function() {
       return currentUser;
     }
-  }
+  };
 });
