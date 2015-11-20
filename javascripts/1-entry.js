@@ -21,12 +21,14 @@ define(
    "2-dependencies",
    "3-loadtemplates",
    "4-login",
-   "5-user-data-storage"],
+   "5-user-data-storage", 
+   "populatelogin"],
    
 function(
   firebase, 
   dependencies, 
   loadTemplates,
   login,
-  userDataStorage) {
+  userDataStorage,
+  populateLogin) {
 })

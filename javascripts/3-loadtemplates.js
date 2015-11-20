@@ -1,6 +1,4 @@
 define(function(require){
-  var hbs = require("hbs/handlebars");
-  var $ = require("jquery");
 
   return {
     findmovie: require("hbs!../templates/template-findmovie"),
@@ -11,13 +9,5 @@ define(function(require){
     userunwatched: require("hbs!../templates/template-userunwatched"),
     userwatched: require("hbs!../templates/template-userwatched"),
   };
-
-  function loginForm(loginObjects) {
-    require([login], function (loginTemplate) {
-      $("#view-login").html(loginTemplate(loginObjects));
-    });
-  };
-
-  loginForm();
 
 });
