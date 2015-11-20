@@ -1,5 +1,5 @@
 define(function(require){
-  var hbs = require("hbs");
+  var hbs = require("hbs/handlebars");
   var $ = require("jquery");
 
   return {
