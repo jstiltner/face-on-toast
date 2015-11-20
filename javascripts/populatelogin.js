@@ -5,4 +5,6 @@ define(function(require){
 
   $("#view-login").html(templates.login());
 
+  
+
 });

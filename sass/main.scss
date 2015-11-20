@@ -1,7 +1,12 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+/********** HEADER **************/
 
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
+header {
+  background-color: lightgray;
+  padding: 15px;
+  display: block;
+}
+
+header div {
+  display:inline-block;
+  padding: 0px 20px;
 }
