@@ -14,7 +14,7 @@ define(function(require) {
 		$("#view-find-movie").removeClass("hidden");
 		$("#view-find-movie").addClass("visible");
 
-    $("findBtn").click(function getImage(title) { 
+    $("#findBtn").click(function getImage(title) { 
     $.ajax({ 
         type: "GET",
         dataType: "json",
@@ -28,13 +28,10 @@ define(function(require) {
             return "Image not found.";
         }
     });
-}
-        })
-    }
-	});
-
-	$("#findBtn").click(function (e) {
-		$("#movieToSearch").value();
-	});
-
 });
+        })
+    });
+	
+
+
+
