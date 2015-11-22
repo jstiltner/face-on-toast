@@ -15,4 +15,8 @@ define(function(require) {
 		$("#view-find-movie").addClass("visible");
 	});
 
+	$("#findBtn").click(function (e) {
+		$("#movieToSearch").value();
+	});
+
 });
