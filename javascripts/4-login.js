@@ -4,6 +4,7 @@ define(function(require) {
   var loadTemplate = require("3-loadtemplates");
   var userStorage = require("5-user-data-storage");
   var populateNewUserView = require("populateNewUserView");
+  var populateUserHomeView = require("populateUserHomeView");
 
   //get a reference to our Firebase app
   var ref = new Firebase("https://faceontoast.firebaseio.com");
@@ -38,6 +39,10 @@ define(function(require) {
       } else {
         console.log("Authenticated successfully with payload:", authData);
         console.log("Authenticated successfully with payload:", authData.uid);
+        // *** go to user home view ***//
+        $("#view-login").addClass("hidden");
+        $("#navBar").removeClass("hidden");
+        $("#register").click(populateUserHomeView.loadUserHomeView());
 
         //need to pass ID info to new function to populate the Dom.
         // completeProfile.showProfile(authData.uid); <-- not the correct variable names
