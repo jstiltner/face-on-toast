@@ -33,4 +33,8 @@ define(function(require) {
     }
 	});
 
+	$("#findBtn").click(function (e) {
+		$("#movieToSearch").value();
+	});
+
 });

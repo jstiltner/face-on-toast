@@ -23,6 +23,7 @@ define(function(require) {
         // *** go to new user view ***//
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
+        $("#navBar").html(templates.navbar());
         populateNewUserView.loadNewUserView();
       }
     });
@@ -42,6 +43,7 @@ define(function(require) {
         // *** go to user home view ***//
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
+        $("#navBar").html(templates.navbar());
         populateUserHomeView.loadUserHomeView();
 
         //need to pass ID info to new function to populate the Dom.
