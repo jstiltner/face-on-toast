@@ -22,7 +22,8 @@ define(
    "2-dependencies",
    "3-loadtemplates",
    "4-login",
-   "5-user-data-storage", 
+   "5-user-data-storage",
+   "6-changeviews", 
    "populatelogin"],
    
 function(
@@ -31,6 +32,7 @@ function(
   loadTemplates,
   login,
   userDataStorage,
+  changeViews,
   populateLogin) {
 })
 
