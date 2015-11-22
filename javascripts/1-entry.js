@@ -34,5 +34,5 @@ function(
   userDataStorage,
   changeViews,
   populateLogin) {
-})
+});
 

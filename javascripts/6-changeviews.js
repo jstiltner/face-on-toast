@@ -65,3 +65,4 @@ define(function(require) {
     $("#view-user-unwatched").hide();
     $("#view-search-my-movie").removeClass("hidden");
   });
+})
