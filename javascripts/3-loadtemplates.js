@@ -2,7 +2,7 @@ define(function(require){
 
   return {
     // findmovie: require("hbs!../templates/template-findmovie"),
-    // login: require("hbs!../templates/template-login"),
+    login: require("hbs!../templates/template-login"),
     newuser: require("hbs!../templates/template-newuser"),
     searchmymovie: require("hbs!../templates/template-searchmymovie"),
     navbar: require("hbs!../templates/template-navbar"),
