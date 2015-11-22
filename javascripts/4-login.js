@@ -23,7 +23,7 @@ define(function(require) {
         // *** go to new user view ***//
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
-        $("#register").click(populateNewUserView.loadNewUserView());
+        populateNewUserView.loadNewUserView();
       }
     });
   });//end register new user
@@ -42,7 +42,7 @@ define(function(require) {
         // *** go to user home view ***//
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
-        $("#register").click(populateUserHomeView.loadUserHomeView());
+        populateUserHomeView.loadUserHomeView();
 
         //need to pass ID info to new function to populate the Dom.
         // completeProfile.showProfile(authData.uid); <-- not the correct variable names

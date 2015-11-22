@@ -23,7 +23,8 @@ define(
    "3-loadtemplates",
    "4-login",
    "5-user-data-storage", 
-   "populatelogin"],
+   "populatelogin",
+   "eventhandlers"],
    
 function(
   firebase, 
@@ -31,6 +32,7 @@ function(
   loadTemplates,
   login,
   userDataStorage,
-  populateLogin) {
+  populateLogin,
+  eventhandlers) {
 });
 
