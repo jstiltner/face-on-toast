@@ -1,14 +1,5 @@
-<!-- watched and unwatched links -->
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-link active" id="watched">Watched</button>
-  <button type="button" class="btn btn-default">|</button>
-  <button type="button" class="btn btn-link" id="unwatched">Unwatched</button>
-</div>
-<!-- Movie Div *** take out comments and put double handle bars around eaches and visibilities-->
-
-{{#each Poster}}
-  <div><img src="{{Poster}}"> 
-  <!-- Watched and Unwatched Btns -->
-    <button type="button" class="btn <!-- visibility -->" id="watchedBtn">Watched</button>
-  </div>
+{{#each movie}}
+	<div class="col-md-3" id="poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
+	{{!-- <h3>{{Title}}</h3> --}}
+<button class="rate-button" id='{{imdbID}}'>Rate</button></div>
 {{/each}}
