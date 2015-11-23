@@ -1,5 +1,5 @@
 {{#each movie}}
-	<img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}'>
+	<div id="poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}'>
 	<h1>{{Title}}</h1>
-{{!-- code for add button--}}
+<button class="add-movie" id='{{imdbID}}'>Add Movie</button></div>
 {{/each}}

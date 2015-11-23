@@ -31,8 +31,9 @@ define(function(require) {
               // pass the results 
               deferred.resolve(data);
               console.log("data", data.Search);
-              $("#view-find-movie").html(templates.searchresults({movie: data.Search}));
-              $("#view-find-movie").show();
+              $("#view-find-search-results").html(templates.searchresults({movie: data.Search}));
+              $("#view-find-movie").hide();
+              $("view-find-search-results").show();
             })
             // if the call errors
             .fail(function(xhr, status, error) {
