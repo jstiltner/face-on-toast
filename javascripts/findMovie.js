@@ -1,6 +1,7 @@
 define(function(require) {
     var $ = require("jquery");
     var Firebase = require("firebase");
+    var q = "q";
 
   //handlebars templates
     var templates = require("3-loadtemplates");
@@ -9,11 +10,20 @@ define(function(require) {
     var populateUserHomeView = require("populateUserHomeView");
 
     return {
+        //set up a few variables
+        
+
+
         findMovie: function(title) { 
+        var data; 
+        var title = $("#movieToSearch").val;  
+        console.log("title",title );  
+        
+
             $.ajax({ 
                 type: "GET",
                 dataType: "json",
-                url: "http://img.omdbapi.com/?apikey=7c212437&t=" + title,
+                url: "http://www.omdbapi.com/?t=" + title,
                 success: function(data){
                 console.log("data returned", data);
                 return $.get(data.Poster); 
@@ -21,8 +31,10 @@ define(function(require) {
             async:false,
             error: function() {
                 return "Image not found.";
-            }
-            });
         }
-    };
+            })
+            }
+    }
 });
+        
+    
