@@ -1,7 +1,7 @@
 define(function(require) {
   var Firebase = require("firebase");
   //handlebars templates
-  var loadTemplate = require("3-loadtemplates");
+  var templates = require("3-loadtemplates");
   var userStorage = require("5-user-data-storage");
   var populateNewUserView = require("populateNewUserView");
   var populateUserHomeView = require("populateUserHomeView");
@@ -44,7 +44,7 @@ define(function(require) {
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
         $("#navBar").html(templates.navbar());
-        populateUserHomeView.loadUserHomeView();
+        // populateUserHomeView.loadUserHomeView();
 
         //need to pass ID info to new function to populate the Dom.
         // completeProfile.showProfile(authData.uid); <-- not the correct variable names

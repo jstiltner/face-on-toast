@@ -13,7 +13,7 @@ define(function(require) {
             $.ajax({ 
                 type: "GET",
                 dataType: "json",
-                url: "http://www.omdbapi.com/?t=" + title,
+                url: "http://img.omdbapi.com/?apikey=7c212437&t=" + title,
                 success: function(data){
                 console.log("data returned", data);
                 return $.get(data.Poster); 
