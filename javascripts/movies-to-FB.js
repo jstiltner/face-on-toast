@@ -8,7 +8,7 @@ define(function(require) {
 
   $("body").on('click', '.add-movie', function(e){
 
-    moviesArray.push(this.id);
+    var movieRefID = this.id;
     console.log("click", this.id);
 
     var nameRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
@@ -17,7 +17,7 @@ define(function(require) {
 
     console.log("I WORK YAYAYAY");
   
-    nameRef.set({movieRefs: moviesArray});
+    nameRef.child("movieRefs").push(movieRefID);
   
         $(this).parent().remove();
   });

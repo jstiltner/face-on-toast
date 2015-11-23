@@ -21,10 +21,12 @@ define(function(require) {
         userStorage.setUid(userData);
         console.log("Successfully created user account with uid:", userData.uid);
         console.log("Successfully created user account:", userData);
+
         // *** go to new user view ***//
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
         $("#navBar").addClass("visible");
+        
         moviesFB.showAddedMovies(userData.uid); 
       }
     });
@@ -39,11 +41,11 @@ define(function(require) {
       if (error) {
         console.log("Login Failed!", error);
       } else {
-        // userStorage.setUid(authData);
+        userStorage.setUid(authData);
         console.log("Authenticated successfully with payload:", authData);
         console.log("Authenticated successfully with payload:", authData.uid);
-        // *** go to user home view ***//
 
+        // *** go to user home view ***//
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
         $("#navBar").addClass("visible");
