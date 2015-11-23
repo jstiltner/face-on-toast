@@ -23,12 +23,12 @@ define(function(require) {
             $.ajax({ 
                 type: "GET",
                 dataType: "json",
-                url: "http://www.omdbapi.com/?t=" + title})
+                url: "http://www.omdbapi.com/?s=" + title})
             //when done do the following:
             .done(function(data) {    
               // pass the results 
               deferred.resolve(data);
-              console.log("data", data.imdbID );
+              console.log("data", data );
               $("#view-find-movie").html(templates.searchresults(data));
             })
             // if the call errors
