@@ -12,17 +12,21 @@ define(function(require) {
   var findMovie = require("findMovie");
 
 
+
+
+
 	//find movies view populate
-  $("body").on('click', "#findMoviesBtn", function (e) {
+  $("body").on('keyup', "enter", function (e) {
   	$("#view-find-movie").html(templates.findmovie());
   	$("#findMovieModal").modal("toggle");
 		$("#view-find-movie").show();
 	});
 	//find movies ajax call
   
-  $("body").on('click', "#findBtn", function (e) {
-  	$("#findMovieModal").modal("toggle");
+  $("body").on('keyup', function (event) {
+  	if (event.which===13) {
     findMovie.findMovie();
+    }
   });
 
 //shows new user view after user clicks 'register' button
