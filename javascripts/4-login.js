@@ -25,7 +25,7 @@ define(function(require) {
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
         $("#navBar").addClass("visible");
-        // populateNewUserView.loadNewUserView();
+        moviesFB.showAddedMovies(authData.uid); 
       }
     });
   });//end register new user

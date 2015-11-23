@@ -13,9 +13,8 @@ define(function(require) {
         // getPoster: function(fn){
             // console.log("getposter fired and received ID of", data.IMDBid );
         
-    findMovie: function(fn) { 
+    searchMovie: function(fn) { 
         //set up a few variables
-            var dataForTemplate = {};
             var data = {}; 
             var title = $("#movieToSearch").val();  
             //sets up deferred object for promise
@@ -25,15 +24,12 @@ define(function(require) {
                 type: "GET",
                 dataType: "json",
                 url: "http://www.omdbapi.com/?s=" + title})
-
             //when done do the following:
             .done(function(data) {    
               // pass the results 
               deferred.resolve(data);
-              console.log("data", data.Search);
-              $("#view-find-search-results").html(templates.searchresults({movie: data.Search}));
-              $("#view-find-movie").hide();
-              $("view-find-search-results").show();
+              console.log("data", data, length);
+              $("#view-find-movie").html(templates.findMovieSearchResults(data));
             })
             // if the call errors
             .fail(function(xhr, status, error) {
@@ -41,8 +37,30 @@ define(function(require) {
             });
 
             return deferred.promise;
-        }
+        },
+
+      // secondXHR: function(data) {
+      //       var deferred = Q.defer();
+      //       console.log("second XHR call fired", data);
+
+      //     $.ajax({
+      //       type: "GET",
+      //       // dataType: "json",
+      //       url: "http://img.omdbapi.com/?apikey=7c212437&i="+data.imdbID
+            
+      //     }).done(function(data) {
+      //       deferred.resolve(data);
+
+      //     }).fail(function(xhr, status, error) {
+      //       deferred.reject(error);
+      //     });
+
+      //     return deferred.promise;
+      //   }
+
+
     };
-});
+        
+    });
                 
             

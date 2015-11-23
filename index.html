@@ -13,15 +13,19 @@
   <body>
     <div class="container-fluid">
 <!-- ******************* NAV BAR ******************* -->
-      <header id="navBar" class="navbar navbar-default hidden">
+     <header id="navBar" class="navbar navbar-default hidden">
         <nav class="nav nav-pills">
-          <input type="text"></input>
+          <div>
+            <a id="findMoviesBtn" href="#">Find Movies</a>
+          </div>
+          <div>
+            <a id="searchMyMoviesBtn" href="#">Search My Movies</a>
+          </div>
+          <div>
+            <a id="logoutBtn" href="#">Logout</a>
+          </div>
         </nav>
       </header> 
-<button type="button" class="btn btn-link" id="watched">All Your Movies</button>
-<button type="button" class="btn btn-link" id="watched">Watched</button>
-<button type="button" class="btn btn-link" id="watched">Unwatched</button>
-<button type="button" class="btn btn-link" id="unwatched">Favorites</button>
 
 <!-- ******************* Log-in View ******************* -->
       <div id="view-login">
@@ -42,7 +46,7 @@
       <div id="view-user-home" style="display:none"></div>
 
 <!-- ******************* User Watched View ******************* -->  
-      <div id="view-user-watched" style="display:none"></div>
+      <div id="view user-watched" style="display:none"></div>
  
 <!-- ******************* User Unwatched View ******************* -->  
       <div id="view-user-unwatched"style="display:none"></div>
@@ -54,5 +58,3 @@
     <script data-main="javascripts/1-entry" src="lib/bower_components/requirejs/require.js"></script>
   </body>
 </html>
-
-
