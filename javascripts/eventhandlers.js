@@ -21,12 +21,8 @@ define(function(require) {
 	//find movies ajax call
   
   $("body").on('click', "#findBtn", function (e) {
-  	findMovie.findMovie();
-  // .then(function(data) {
-  //   return findMovie.secondXHR(data);
-  // })
-  // .done();
   	$("#findMovieModal").modal("toggle");
+    findMovie.findMovie();
   });
 
 //shows new user view after user clicks 'register' button
@@ -52,7 +48,7 @@ define(function(require) {
   });
 
 //
-  $("body").on('click', "#findBtn", function() {
+  $("body").on('click', "#findMoviesBtn", function() {
     $("#view-login").hide();
     $("#view-new-user").hide();
     $("#view-user-home").hide();

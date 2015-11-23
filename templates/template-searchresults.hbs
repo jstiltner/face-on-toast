@@ -1,1 +1,5 @@
-<img src='http://img.omdbapi.com/?apikey=7c212437&i="{{data.imdbID}}"''>
+{{#each movie}}
+	<img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}'>
+	<h1>{{Title}}</h1>
+{{!-- code for add button--}}
+{{/each}}
