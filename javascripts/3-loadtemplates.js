@@ -1,6 +1,6 @@
 define(function(require){
-  return {
 
+  return {
     findmovie: require("hbs!../templates/template-findmovie"),
     login: require("hbs!../templates/template-login"),
     newuser: require("hbs!../templates/template-newuser"),
@@ -11,4 +11,5 @@ define(function(require){
     findMovieSearchresults: require("hbs!../templates/template-searchresults"), 
     myMovieSearchresults: require("hbs!../templates/template-searchresults") 
   };
+
 });

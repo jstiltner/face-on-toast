@@ -10,6 +10,7 @@ define(function(require) {
   var populateUserHomeView = require("populateUserHomeView");
   var populateFindAMovieView = require("populateFindAMovieView");
   var findMovie = require("findMovie");
+<<<<<<< HEAD
   var searchMovie = require("searchMovie");
 
 
@@ -33,6 +34,7 @@ define(function(require) {
   //   return findMovie.secondXHR(data);
   // })
   // .done();
+
     $("#findMovieModal").modal("toggle");
   });
 
@@ -115,6 +117,16 @@ define(function(require) {
   });
 
 //
+
+  $("body").on('click', "#findBtn", function() {
+    $("#view-login").hide();
+    $("#view-new-user").hide();
+    $("#view-user-home").hide();
+    $("#view-find-movie").hide();
+    $("#view user-watched").hide();
+    $("#view-user-unwatched").hide();
+    $("#view-search-my-movie").show();
+  });
 });
 
 

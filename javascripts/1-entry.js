@@ -17,6 +17,22 @@
 });
 
 define(
-  ["dependencies", "firebase", "login-form", "userStorage", "3-loadtemplates", "complete-profile", "adduser", "auth-storage", "addtnlinfo"], 
-  function(dependencies, firebase, loginForm, userStorage, templates, completeProfile, adduser, auth, additionalinfo) {
+
+  ["firebase", 
+   "2-dependencies",
+   "3-loadtemplates",
+   "4-login",
+   "5-user-data-storage", 
+   "populatelogin",
+   "eventhandlers"],
+   
+function(
+  firebase, 
+  dependencies, 
+  loadTemplates,
+  login,
+  userDataStorage,
+  populateLogin,
+  eventhandlers) {
 });
+

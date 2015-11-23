@@ -28,7 +28,7 @@ define(function(require) {
             .done(function(data) {    
               // pass the results 
               deferred.resolve(data);
-              console.log("data", data, length);
+              console.log("data", data );
               $("#view-find-movie").html(templates.findMovieSearchResults(data));
             })
             // if the call errors
@@ -57,10 +57,7 @@ define(function(require) {
 
       //     return deferred.promise;
       //   }
-
-
-    };
-        
-    });
+    };      
+});
                 
             
