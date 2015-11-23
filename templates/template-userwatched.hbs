@@ -2,10 +2,11 @@
 <button type="button" class="btn btn-link active" id="watched">Watched</button>
 <button type="button" class="btn btn-link" id="unwatched">Unwatched</button>
 <!-- Movie Div *** take out comments and put double handle bars around eaches and visibilities-->
+
 {{#each Poster}}
-<div><img src="{{Poster}}"> 
-<!-- Watched and Unwatched Btns -->
-<button type="button" class="btn <!-- visibility -->" id="unwatchedBtn">Move to unwatched</button>
-<button type="button" class="btn <!-- visibility -->" id="watchedBtn">Watched</button>
+  <div><img src="{{Poster}}"> 
+  <!-- Watched and Unwatched Btns -->
+    <button type="button" class="btn <!-- visibility -->" id="unwatchedBtn">Move to unwatched</button>
+    <button type="button" class="btn <!-- visibility -->" id="watchedBtn">Watched</button>
+  </div>
 {{/each}}
-</div>

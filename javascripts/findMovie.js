@@ -17,7 +17,7 @@ define(function(require) {
                 success: function(data){
                 console.log("data returned", data);
                 return $.get(data.Poster); 
-            },
+                },
             async:false,
             error: function() {
                 return "Image not found.";

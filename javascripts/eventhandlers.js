@@ -12,20 +12,84 @@ define(function(require) {
 
 
 	//find movies view populate
-    $("#findMoviesBtn").click(function (e) {
-    	console.log("click is registering");
-    	$("#view-find-movie").html(templates.findmovie());
-  		$("#findMovieModal").modal("toggle");
+  $("body").on('click', "#findMoviesBtn", function (e) {
+  	$("#view-find-movie").html(templates.findmovie());
+  	$("#findMovieModal").modal("toggle");
 		$("#view-find-movie").removeClass("hidden");
 		$("#view-find-movie").addClass("visible");
 	});
 	//find movies ajax call
-	$("#findBtn").click(function (e) {
-  		findMovie.findMovie();
-  		$("#findMovieModal").modal("toggle");
-		templates.findMovie(findMovie);
-		console.log(templates.findmovie(findMovie));
-    });
+  $("body").on('click', "#findBtn", function (e) {
+  	findMovie.findMovie();
+  	$("#findMovieModal").modal("toggle");
+  });
+
+//shows new user view after user clicks 'register' button
+  $("body").on('click', "#register", function() {
+    $("#view-login").hide();
+    $("#view-new-user").removeClass("hidden");
+    $("#view-user-home").hide();
+    $("#view-find-movie").hide();
+    $("#view user-watched").hide();
+    $("#view-user-unwatched").hide();
+    $("#view-search-my-movie").hide();
+  });
+
+//shows user home view after user clicks 'log in' button
+  $("body").on('click', "#log-in", function() {
+    $("#view-login").hide();
+    $("#view-new-user").hide();
+    $("#view-user-home").removeClass("hidden");
+    $("#view-find-movie").hide();
+    $("#view user-watched").hide();
+    $("#view-user-unwatched").hide();
+    $("#view-search-my-movie").hide();
+  });
+
+//
+  $("body").on('click', "#findBtn", function() {
+    $("#view-login").hide();
+    $("#view-new-user").hide();
+    $("#view-user-home").hide();
+    $("#view-find-movie").removeClass("hidden");
+    $("#view user-watched").hide();
+    $("#view-user-unwatched").hide();
+    $("#view-search-my-movie").hide();
+  });
+
+//
+  $("body").on('click', "#watchedBtn", function() {
+    $("#view-login").hide();
+    $("#view-new-user").hide();
+    $("#view-user-home").hide();
+    $("#view-find-movie").hide();
+    $("#view user-watched").removeClass("hidden");
+    $("#view-user-unwatched").hide();
+    $("#view-search-my-movie").hide();
+  });
+
+//
+  $("body").on('click', "#unwatchedBtn", function() {
+    $("#view-login").hide();
+    $("#view-new-user").hide();
+    $("#view-user-home").hide();
+    $("#view-find-movie").hide();
+    $("#view user-watched").hide();
+    $("#view-user-unwatched").removeClass("hidden");
+    $("#view-search-my-movie").hide();
+  });
+
+//
+  $("body").on('click', "#findBtn", function() {
+    $("#view-login").hide();
+    $("#view-new-user").hide();
+    $("#view-user-home").hide();
+    $("#view-find-movie").hide();
+    $("#view user-watched").hide();
+    $("#view-user-unwatched").hide();
+    $("#view-search-my-movie").removeClass("hidden");
+  });
 });
+
 
 

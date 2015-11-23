@@ -41,6 +41,7 @@ define(function(require) {
         console.log("Authenticated successfully with payload:", authData);
         console.log("Authenticated successfully with payload:", authData.uid);
         // *** go to user home view ***//
+
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
         $("#navBar").addClass("visible");
