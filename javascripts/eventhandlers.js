@@ -10,7 +10,6 @@ define(function(require) {
   var populateUserHomeView = require("populateUserHomeView");
   var populateFindAMovieView = require("populateFindAMovieView");
   var findMovie = require("findMovie");
-<<<<<<< HEAD
   var searchMovie = require("searchMovie");
 
 
