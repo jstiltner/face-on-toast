@@ -1,12 +1,20 @@
 define(function(require) {
-  var currentUser = null;
+  var uid = null;
+  var uKey = null; 
 
   return {
-    setUser: function(user) {
-      currentUser = user;
+    getUid: function () {
+      return uid;
     },
-    getUser: function() {
-      return currentUser;
+    setUid: function (newId) {
+      uid = newId.uid;
+    console.log("uid", newId);
+    },
+    getKey: function () {
+      return uKey;
+    },
+    setKey: function (newKey) {
+      uKey = newKey;
     }
   };
 });

@@ -24,7 +24,8 @@ define(
    "4-login",
    "5-user-data-storage", 
    "populatelogin",
-   "eventhandlers"],
+   "eventhandlers",
+   "movies-to-FB"],
    
 function(
   firebase, 
@@ -33,6 +34,7 @@ function(
   login,
   userDataStorage,
   populateLogin,
-  eventhandlers) {
+  eventhandlers,
+  moviesFB) {
 });
 
