@@ -7,7 +7,7 @@ define(function(require) {
   //load handlebars template
   var templates = require("3-loadtemplates");
 
-  $(body).on("click", "#watched" function(e){
+  $(body).on("click", "#watched" function(e) {
     e.preventDefault();
     var movie = $(this).parents('.movie');
     $populateUserHomeView.post('/movie/' + $(this).data('id') + '/watched', function(data){
