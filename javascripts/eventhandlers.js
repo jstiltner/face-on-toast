@@ -15,8 +15,7 @@ define(function(require) {
   $("body").on('click', "#findMoviesBtn", function (e) {
   	$("#view-find-movie").html(templates.findmovie());
   	$("#findMovieModal").modal("toggle");
-		$("#view-find-movie").removeClass("hidden");
-		$("#view-find-movie").addClass("visible");
+		$("#view-find-movie").show();
 	});
 	//find movies ajax call
   $("body").on('click', "#findBtn", function (e) {
@@ -27,7 +26,7 @@ define(function(require) {
 //shows new user view after user clicks 'register' button
   $("body").on('click', "#register", function() {
     $("#view-login").hide();
-    $("#view-new-user").removeClass("hidden");
+    $("#view-new-user").show();
     $("#view-user-home").hide();
     $("#view-find-movie").hide();
     $("#view user-watched").hide();
@@ -39,7 +38,7 @@ define(function(require) {
   $("body").on('click', "#log-in", function() {
     $("#view-login").hide();
     $("#view-new-user").hide();
-    $("#view-user-home").removeClass("hidden");
+    $("#view-user-home").show();
     $("#view-find-movie").hide();
     $("#view user-watched").hide();
     $("#view-user-unwatched").hide();
@@ -51,7 +50,7 @@ define(function(require) {
     $("#view-login").hide();
     $("#view-new-user").hide();
     $("#view-user-home").hide();
-    $("#view-find-movie").removeClass("hidden");
+    $("#view-find-movie").show();
     $("#view user-watched").hide();
     $("#view-user-unwatched").hide();
     $("#view-search-my-movie").hide();
@@ -63,7 +62,7 @@ define(function(require) {
     $("#view-new-user").hide();
     $("#view-user-home").hide();
     $("#view-find-movie").hide();
-    $("#view user-watched").removeClass("hidden");
+    $("#view user-watched").show();
     $("#view-user-unwatched").hide();
     $("#view-search-my-movie").hide();
   });
@@ -75,7 +74,7 @@ define(function(require) {
     $("#view-user-home").hide();
     $("#view-find-movie").hide();
     $("#view user-watched").hide();
-    $("#view-user-unwatched").removeClass("hidden");
+    $("#view-user-unwatched").show();
     $("#view-search-my-movie").hide();
   });
 
@@ -87,7 +86,7 @@ define(function(require) {
     $("#view-find-movie").hide();
     $("#view user-watched").hide();
     $("#view-user-unwatched").hide();
-    $("#view-search-my-movie").removeClass("hidden");
+    $("#view-search-my-movie").show();
   });
 });
 
