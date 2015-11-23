@@ -5,6 +5,7 @@ define(function(require) {
   var userStorage = require("5-user-data-storage");
   var populateNewUserView = require("populateNewUserView");
   var populateUserHomeView = require("populateUserHomeView");
+  var moviesFB = require("movies-to-FB");
 
   //get a reference to our Firebase app
   var ref = new Firebase("https://faceontoast.firebaseio.com");
@@ -17,14 +18,14 @@ define(function(require) {
       if (error) {
         console.log("Error creating user:", error);
       } else {
-        userStorage.setUser(userData);
+        userStorage.setUid(userData);
         console.log("Successfully created user account with uid:", userData.uid);
         console.log("Successfully created user account:", userData);
         // *** go to new user view ***//
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
         $("#navBar").addClass("visible");
-        populateNewUserView.loadNewUserView();
+        // populateNewUserView.loadNewUserView();
       }
     });
   });//end register new user
@@ -38,6 +39,7 @@ define(function(require) {
       if (error) {
         console.log("Login Failed!", error);
       } else {
+        userStorage.setUid(authData);
         console.log("Authenticated successfully with payload:", authData);
         console.log("Authenticated successfully with payload:", authData.uid);
         // *** go to user home view ***//
@@ -48,7 +50,7 @@ define(function(require) {
         // populateUserHomeView.loadUserHomeView();
 
         //need to pass ID info to new function to populate the Dom.
-        // completeProfile.showProfile(authData.uid); <-- not the correct variable names
+        moviesFB.showAddedMovies(authData.uid); 
       }
     });
   });//end login
