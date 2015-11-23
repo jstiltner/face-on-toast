@@ -21,12 +21,8 @@ define(function(require) {
 	//find movies ajax call
   
   $("body").on('click', "#findBtn", function (e) {
-  	findMovie.findMovie();
-  // .then(function(data) {
-  //   return findMovie.secondXHR(data);
-  // })
-  // .done();
   	$("#findMovieModal").modal("toggle");
+    findMovie.findMovie();
   });
 
 //shows new user view after user clicks 'register' button
@@ -52,15 +48,15 @@ define(function(require) {
   });
 
 //
-  $("body").on('click', "#findBtn", function() {
-    $("#view-login").hide();
-    $("#view-new-user").hide();
-    $("#view-user-home").hide();
-    $("#view-find-movie").show();
-    $("#view user-watched").hide();
-    $("#view-user-unwatched").hide();
-    $("#view-search-my-movie").hide();
-  });
+  // $("body").on('click', "#findMoviesBtn", function() {
+  //   $("#view-login").hide();
+  //   $("#view-new-user").hide();
+  //   $("#view-user-home").hide();
+  //   $("#view-find-movie").show();
+  //   $("#view user-watched").hide();
+  //   $("#view-user-unwatched").hide();
+  //   $("#view-search-my-movie").hide();
+  // });
 
 //
   $("body").on('click', "#watchedBtn", function() {
