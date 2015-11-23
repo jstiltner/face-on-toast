@@ -1,6 +1,7 @@
 define(function(require) {
   var Firebase = require("firebase");
   var $ = require("jquery");
+  var q = require("q");
 
   //handlebars templates
   var templates = require("3-loadtemplates");
@@ -18,8 +19,13 @@ define(function(require) {
 		$("#view-find-movie").show();
 	});
 	//find movies ajax call
+  
   $("body").on('click', "#findBtn", function (e) {
   	findMovie.findMovie();
+  // .then(function(data) {
+  //   return findMovie.secondXHR(data);
+  // })
+  // .done();
   	$("#findMovieModal").modal("toggle");
   });
 
