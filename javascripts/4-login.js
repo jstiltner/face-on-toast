@@ -25,7 +25,7 @@ define(function(require) {
         $("#view-login").addClass("hidden");
         $("#navBar").removeClass("hidden");
         $("#navBar").addClass("visible");
-        moviesFB.showAddedMovies(authData.uid); 
+        moviesFB.showAddedMovies(userData.uid); 
       }
     });
   });//end register new user
@@ -39,7 +39,7 @@ define(function(require) {
       if (error) {
         console.log("Login Failed!", error);
       } else {
-        userStorage.setUid(authData);
+        // userStorage.setUid(authData);
         console.log("Authenticated successfully with payload:", authData);
         console.log("Authenticated successfully with payload:", authData.uid);
         // *** go to user home view ***//
