@@ -22,6 +22,8 @@ define(function(require) {
 //shows your movies when user clicks "all movies"
   $("body").on('click', '#allYourMovies', function (event) {
     fbToDOM.fbToDOM();
+    $("#view-user-home").show();
+
   });
 
 //shows new user view after user clicks 'register' button

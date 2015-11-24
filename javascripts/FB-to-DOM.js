@@ -20,6 +20,7 @@ define(function(require) {
 			// Attach an asynchronous callback to read the data at our posts reference
 			userRef.once("value", function(snapshot) {
 				var importedData = snapshot.val();
+				console.log("imported Data", importedData );
 				var movieRefs = [];
 				for (var key in importedData) {
 			      var datawithID = importedData[key];
@@ -27,7 +28,12 @@ define(function(require) {
 			      datawithID.movieRefs=movieRefs;
 			      importArray[importArray.length] = datawithID;
 				}
-			  console.log(importArray);
+			  var objectForTemplate = {movieImg: importArray};
+			  $("#view-user-home").html(templates.userhome(objectForTemplate));
+			  console.log("objectForTemplate" ,objectForTemplate);
+
+
+
 			}, function (errorObject) {
 			  console.log("The read failed: " + errorObject.code);
 			});
