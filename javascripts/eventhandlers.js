@@ -11,18 +11,6 @@ define(function(require) {
   var populateFindAMovieView = require("populateFindAMovieView");
   var findMovie = require("findMovie");
 
-
-
-
-
-	//find movies view populate
-  $("body").on('keyup', "enter", function (e) {
-  	$("#view-find-movie").html(templates.findmovie());
-  	$("#findMovieModal").modal("toggle");
-		$("#view-find-movie").show();
-	});
-	//find movies ajax call
-  
   $("body").on('keyup', function (event) {
   	if (event.which===13) {
     findMovie.findMovie();
@@ -32,6 +20,8 @@ define(function(require) {
 //shows new user view after user clicks 'register' button
   $("body").on('click', "#register", function() {
     $("#view-login").hide();
+    $("#view-filters").removeClass("hidden");
+    $("#view-navBar").removeClass("hidden");
     $("#view-new-user").show();
     $("#view-user-home").hide();
     $("#view-find-movie").hide();
@@ -43,6 +33,8 @@ define(function(require) {
 //shows user home view after user clicks 'log in' button
   $("body").on('click', "#log-in", function() {
     $("#view-login").hide();
+    $("#view-filters").removeClass("hidden");
+    $("#view-navBar").removeClass("hidden");
     $("#view-new-user").hide();
     $("#view-user-home").show();
     $("#view-find-movie").hide();

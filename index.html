@@ -13,11 +13,22 @@
   <body>
     <div class="container-fluid">
 <!-- ******************* NAV BAR ******************* -->
-      <header id="navBar" class="navbar navbar-default hidden">
+      <header id="view-navBar" class="navbar navbar-default hidden">
         <div>
           <input type="text" class="form-control" id="movieToSearch" placeholder="Find a movie...">
         </div>
+        <div>
+          <a id="logoutBtn" href="#">Logout</a>
+        </div>
       </header> 
+
+<!-- ******************* Filter Options ******************* -->
+      <div id="view-filters" class="hidden">
+        <button type="button" class="btn btn-link" id="allYourMovies">All Your Movies</button>
+        <button type="button" class="btn btn-link" id="watched">Watched</button>
+        <button type="button" class="btn btn-link" id="unwatched">Unwatched</button>
+        <button type="button" class="btn btn-link" id="favorites">Favorites</button>
+      </div>
 
 <!-- ******************* Log-in View ******************* -->
       <div id="view-login">
@@ -25,7 +36,7 @@
       </div>
 
 <!-- ******************* Find Movie Modal View ******************* -->
-      <div id="view-find-movie"></div>
+      <div id="view-find-movie" style="display:none"></div>
 
 <!-- ******************* Find Movie Results View ******************* -->
       <div id="view-find-search-results"></div>
