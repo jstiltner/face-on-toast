@@ -29,6 +29,7 @@ define(function(require) {
 			      importArray[importArray.length] = datawithID;
 				}
 			  var objectForTemplate = {movieImg: importArray};
+			  	importArray = [];
 			  $("#view-user-home").html(templates.userhome(objectForTemplate));
 			  console.log("objectForTemplate" ,objectForTemplate);
 
