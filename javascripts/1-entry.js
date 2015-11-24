@@ -25,7 +25,8 @@ define(
    "5-user-data-storage", 
    "populatelogin",
    "eventhandlers",
-   "movies-to-FB"],
+   "movies-to-FB",
+   "FB-to-DOM"],
    
 function(
   firebase, 
@@ -35,6 +36,7 @@ function(
   userDataStorage,
   populateLogin,
   eventhandlers,
-  moviesFB) {
+  moviesFB,
+  FB_to_DOM) {
 });
 

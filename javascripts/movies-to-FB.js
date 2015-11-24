@@ -27,15 +27,15 @@ define(function(require) {
       var ref = new Firebase("https://faceontoast.firebaseio.com");
 
       ref.child("users").once("value", function(snapshot) {
-      var users = snapshot.val();
-      console.log("users", users);
+        var users = snapshot.val();
+        console.log("users", users);
 
-      var addedMovies = [];
-        for (var key in users) {
-          var userObj = users[key];
-          userObj.key = key;
-          userObj.addedMovies = addedMovies;
-          moviesArray[moviesArray.length] = userObj;
+        var addedMovies = [];
+          for (var key in users) {
+            var userObj = users[key];
+            userObj.key = key;
+            userObj.addedMovies = addedMovies;
+            moviesArray[moviesArray.length] = userObj;
         }   
       });
 

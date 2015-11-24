@@ -10,11 +10,18 @@ define(function(require) {
   var populateUserHomeView = require("populateUserHomeView");
   var populateFindAMovieView = require("populateFindAMovieView");
   var findMovie = require("findMovie");
+  var fbToDOM = require("FB-to-DOM");
 
+//searches movies when enter key is pressed
   $("body").on('keyup', function (event) {
   	if (event.which===13) {
     findMovie.findMovie();
     }
+  });
+
+//shows your movies when user clicks "all movies"
+  $("body").on('click', '#allYourMovies', function (event) {
+    fbToDOM.fbToDOM();
   });
 
 //shows new user view after user clicks 'register' button
