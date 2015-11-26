@@ -6,8 +6,6 @@ define(function(require) {
   //handlebars templates
     var templates = require("3-loadtemplates");
     var userStorage = require("5-user-data-storage");
-    var populateNewUserView = require("populateNewUserView");
-    var populateUserHomeView = require("populateUserHomeView");
 	var importArray = [];
 
 	return {
@@ -31,6 +29,12 @@ define(function(require) {
 			  var objectForTemplate = {movieImg: importArray};
 			  	importArray = [];
 			  $("#view-user-home").html(templates.userhome(objectForTemplate));
+			  $("#view-user-home").show();
+			  $("#view-find-movie").hide();
+			  $("#view user-watched").hide();
+			  $("#view-user-unwatched").hide();
+			  $("#view-search-my-movie").hide();
+			  $("#view-find-search-results").hide();
 			  console.log("objectForTemplate" ,objectForTemplate);
 
 

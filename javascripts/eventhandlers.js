@@ -6,95 +6,58 @@ define(function(require) {
   //handlebars templates
   var templates = require("3-loadtemplates");
   var userStorage = require("5-user-data-storage");
-  var populateNewUserView = require("populateNewUserView");
-  var populateUserHomeView = require("populateUserHomeView");
-  var populateFindAMovieView = require("populateFindAMovieView");
+  var register = require("register");
+  var login = require("4-login");
   var findMovie = require("findMovie");
+  var addMovie = require("add-movie");
+  var moviesFB = require("movies-to-FB");
   var fbToDOM = require("FB-to-DOM");
+  var filterWatched = require("filter-watched");
+  var filterUnwatched = require("filter-unwatched");
+  var filterFavorites = require("filter-favorites");
 
-//searches movies when enter key is pressed
+
+// ***** Event handlers for log-in/register
+  //shows new user view after user clicks 'register' button
+  $("body").on('click', "#register", function() {
+    register.register();
+  });
+
+  //shows user home view after user clicks 'log in' button
+  $("body").on('click', "#log-in", function (event) {
+    login.login();
+  });
+
+
+// ***** Search/add movies functionality 
+  //searches movies when enter key is pressed
   $("body").on('keyup', function (event) {
   	if (event.which===13) {
     findMovie.findMovie();
     }
   });
 
-//shows your movies when user clicks "all movies"
+// ***** Event handlers for movie filters
+  //shows your movies when user clicks "all movies"
   $("body").on('click', '#allYourMovies', function (event) {
     fbToDOM.fbToDOM();
-    $("#view-user-home").show();
-
+  });
+    
+  //filters user's movies to show only their movies marked 'watched', when "watched" filter is clicked.
+  $("body").on('click', "#watched", function() {
+    filterWatched.filterWatched();
   });
 
-//shows new user view after user clicks 'register' button
-  $("body").on('click', "#register", function() {
-    $("#view-login").hide();
-    $("#view-filters").removeClass("hidden");
-    $("#view-navBar").removeClass("hidden");
-    $("#view-new-user").show();
-    $("#view-user-home").hide();
-    $("#view-find-movie").hide();
-    $("#view user-watched").hide();
-    $("#view-user-unwatched").hide();
-    $("#view-search-my-movie").hide();
+  //filters user's movies to show only their movies marked 'unwatched', when "unwatched" filter is clicked.
+  $("body").on('click', "#unwatched", function() {
+    filterUnwatched.filterUnwatched();
   });
 
-//shows user home view after user clicks 'log in' button
-  $("body").on('click', "#log-in", function() {
-    $("#view-login").hide();
-    $("#view-filters").removeClass("hidden");
-    $("#view-navBar").removeClass("hidden");
-    $("#view-new-user").hide();
-    $("#view-user-home").show();
-    $("#view-find-movie").hide();
-    $("#view user-watched").hide();
-    $("#view-user-unwatched").hide();
-    $("#view-search-my-movie").hide();
+  //filters user's movies to show only their favorited (5 stars) movies, when "favorites" filter is clicked.
+  $("body").on('click', "#favorites", function() {
+    filterFavorites.filterFavorites();
   });
 
-//
-  // $("body").on('click', "#findMoviesBtn", function() {
-  //   $("#view-login").hide();
-  //   $("#view-new-user").hide();
-  //   $("#view-user-home").hide();
-  //   $("#view-find-movie").show();
-  //   $("#view user-watched").hide();
-  //   $("#view-user-unwatched").hide();
-  //   $("#view-search-my-movie").hide();
-  // });
-
-//
-  $("body").on('click', "#watchedBtn", function() {
-    $("#view-login").hide();
-    $("#view-new-user").hide();
-    $("#view-user-home").hide();
-    $("#view-find-movie").hide();
-    $("#view user-watched").show();
-    $("#view-user-unwatched").hide();
-    $("#view-search-my-movie").hide();
-  });
-
-//
-  $("body").on('click', "#unwatchedBtn", function() {
-    $("#view-login").hide();
-    $("#view-new-user").hide();
-    $("#view-user-home").hide();
-    $("#view-find-movie").hide();
-    $("#view user-watched").hide();
-    $("#view-user-unwatched").show();
-    $("#view-search-my-movie").hide();
-  });
-
-//
-  $("body").on('click', "#findBtn", function() {
-    $("#view-login").hide();
-    $("#view-new-user").hide();
-    $("#view-user-home").hide();
-    $("#view-find-movie").hide();
-    $("#view user-watched").hide();
-    $("#view-user-unwatched").hide();
-    $("#view-search-my-movie").show();
-  });
 });
 
 

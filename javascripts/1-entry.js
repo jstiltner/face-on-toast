@@ -21,22 +21,16 @@ define(
   ["firebase", 
    "2-dependencies",
    "3-loadtemplates",
-   "4-login",
    "5-user-data-storage", 
    "populatelogin",
-   "eventhandlers",
-   "movies-to-FB",
-   "FB-to-DOM"],
+   "eventhandlers"],
    
 function(
   firebase, 
   dependencies, 
   loadTemplates,
-  login,
   userDataStorage,
   populateLogin,
-  eventhandlers,
-  moviesFB,
-  FB_to_DOM) {
+  eventhandlers) {
 });
 

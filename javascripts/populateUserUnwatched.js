@@ -1,8 +1,19 @@
 define(function(require){
 
-  var $ = require("jquery");
-  var templates = require("3-loadtemplates");
+    var $ = require("jquery");
+    var templates = require("3-loadtemplates");
 
-    $("#view-user-unwatched").html(templates.userunwatched());
-
+	return {
+	  
+	    popUnwatched: function (fn) { 
+			$("#view-user-watched").html(templates.userunwatched()); 
+	        $("#view user-unwatched").show();
+	        $("#view-new-user").hide();
+	        $("#view-user-home").hide();
+	        $("#view-find-movie").hide();
+	        $("#view-user-watched").hide();
+	        $("#view-search-my-movie").hide();
+	        $("#view-find-search-results").hide();
+	    }
+	};
 });

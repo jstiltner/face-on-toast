@@ -3,18 +3,18 @@ define(function(require) {
   var Firebase = require("firebase");
 
   var userStorage = require("5-user-data-storage");
-  var popWatched = require("populatedUserWatched");
+  var popUnwatched = require("populateUserUnwatched");
   //load handlebars template
   var templates = require("3-loadtemplates");
 
   return {
-    filterWatched: function (e) {
+    filterUnwatched: function (e) {
       e.preventDefault();
       var movie = $(this).parents('.movie');
-      post('/movie/' + $(this).data('id') + '/watched', function(data){
+      post('/movie/' + $(this).data('id') + '/unwatched', function(data){
         movie.fadeOut();
       });
-      popWatched.popWatched();
+      popUnwatched.popUnwatched();  
     }
   };
 });
