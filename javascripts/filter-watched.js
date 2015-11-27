@@ -9,12 +9,8 @@ define(function(require) {
 
   return {
     filterWatched: function (e) {
-      e.preventDefault();
-      var movie = $(this).parents('.movie');
-      post('/movie/' + $(this).data('id') + '/watched', function(data){
-        movie.fadeOut();
-      });
       popWatched.popWatched();
+      console.log("function was ran");
     }
   };
 });

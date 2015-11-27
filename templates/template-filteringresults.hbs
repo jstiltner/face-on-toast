@@ -10,7 +10,7 @@
 	{{#if }}
 		<div class="col-md-3" id="poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
 		{{!-- <h3>{{Title}}</h3> --}}
-		<button class="watched-button" id='{{imdbID}}'>Watched</button></div>
+		<button class="watchedBtn btn" id='{{@key}}'>Watched</button></div>
 	{{/if}}
 	{{!-- if the movie is already in Firebase, and watched = True --}}
 	{{#if }}

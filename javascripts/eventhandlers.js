@@ -12,6 +12,7 @@ define(function(require) {
   var addMovie = require("add-movie");
   var moviesFB = require("movies-to-FB");
   var fbToDOM = require("FB-to-DOM");
+  var watchedFBtoDOM = require("watched-FB-to-DOM");
   var filterWatched = require("filter-watched");
   var filterUnwatched = require("filter-unwatched");
   var filterFavorites = require("filter-favorites");
@@ -37,7 +38,15 @@ define(function(require) {
     }
   });
 
+
+// ***** Event handlers for watched and favorite buttons
+  //updates FB to make watched = true when "watched" button is clicked
+  // $("body").on('click', '#watchedBtn', function (event) {
+  //   watchedFBtoDOM.watchedFBtoDOM();
+  // });
+
 // ***** Event handlers for movie filters
+
   //shows your movies when user clicks "all movies"
   $("body").on('click', '#allYourMovies', function (event) {
     fbToDOM.fbToDOM();
