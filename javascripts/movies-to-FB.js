@@ -7,19 +7,12 @@ define(function(require) {
   var moviesArray = [];
 
   $("body").on('click', '.add-movie', function(e){
-
     var movieRefID = this.id;
     console.log("click", this.id);
-
     var nameRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
     console.log("userStorage.getUid()", userStorage.getUid());
-
-
-    console.log("I WORK YAYAYAY");
-  
     nameRef.child("movieRefs").push(movieRefID);
-  
-        $(this).parent().remove();
+    $(this).parent().remove();
   });
 
   return {

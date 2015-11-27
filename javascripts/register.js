@@ -9,7 +9,7 @@ define(function(require) {
   var ref = new Firebase("https://faceontoast.firebaseio.com");
 
   return {
-    resigster: function (event) {
+    register: function (event) {
   //get a reference to our Firebase app
   //create new user/account when register account button is clicked
       ref.createUser({

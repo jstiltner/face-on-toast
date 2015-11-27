@@ -11,7 +11,7 @@ define(function(require) {
 	return {
   
 	    fbToDOM: function(fn) { 
-	        console.log("fbToDOM function fired.  your butt stink.");
+	        console.log("fbToDOM function fired.");
 	        //set up a few variables
             //sets up deferred object for promise
             var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid()+ '/movieRefs');
@@ -22,7 +22,9 @@ define(function(require) {
 				var movieRefs = [];
 				for (var key in importedData) {
 			      var datawithID = importedData[key];
+			      console.log("data with id", datawithID);
 			      datawithID.key = key;
+			      console.log("key", key);
 			      datawithID.movieRefs=movieRefs;
 			      importArray[importArray.length] = datawithID;
 				}

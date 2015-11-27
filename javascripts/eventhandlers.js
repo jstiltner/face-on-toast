@@ -41,9 +41,12 @@ define(function(require) {
 
 // ***** Event handlers for watched and favorite buttons
   //updates FB to make watched = true when "watched" button is clicked
-  // $("body").on('click', '#watchedBtn', function (event) {
-  //   watchedFBtoDOM.watchedFBtoDOM();
-  // });
+  $("body").on('click', '.watchedBtn', function (event) {
+    var parent = $(this).parent();
+    var parentID = parent.attr("id");
+    watchedFBtoDOM.watchedTrue(parentID);
+    $(this).parent().remove();
+  });
 
 // ***** Event handlers for movie filters
 
