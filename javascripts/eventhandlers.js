@@ -15,6 +15,7 @@ define(function(require) {
   var filterWatched = require("filter-watched");
   var filterUnwatched = require("filter-unwatched");
   var filterFavorites = require("filter-favorites");
+  var deletor = require("deletefromFB");
 
 
 // ***** Event handlers for log-in/register
@@ -56,6 +57,14 @@ define(function(require) {
   //filters user's movies to show only their favorited (5 stars) movies, when "favorites" filter is clicked.
   $("body").on('click', "#favorites", function() {
     filterFavorites.filterFavorites();
+  });
+
+  //handles deletion from DOM
+  $("body").on('click', ".delete", function(){
+    
+    deletor.deleteIt();
+    //delete they "mama mama"
+    $(this).parent().parent().remove();
   });
 
 });

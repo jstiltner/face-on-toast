@@ -14,7 +14,7 @@ define(function(require) {
 	        console.log("fbToDOM function fired.  your butt stink.");
 	        //set up a few variables
             //sets up deferred object for promise
-            var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid()+ '/movieRefs');
+            var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
 			// Attach an asynchronous callback to read the data at our posts reference
 			userRef.once("value", function(snapshot) {
 				var importedData = snapshot.val();

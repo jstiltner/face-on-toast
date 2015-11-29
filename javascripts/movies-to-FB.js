@@ -15,9 +15,11 @@ define(function(require) {
     console.log("movieRef variable holds", movieRef );
 // if path !== invalid
   movieRef.on("value", function(snapshot) {
-  console.log("snapshot",snapshot.val() );
-  if (snapshot.val() === null){
+  if (snapshot === null){
 
+  }
+
+});
 
 
   // Ajax call to main OMDB for movie information
@@ -56,16 +58,13 @@ define(function(require) {
               deferred.reject(error);
             });
 
-  }
-
-});
     var nameRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
     console.log("userStorage.getUid()", userStorage.getUid());
 
 
     console.log("I WORK YAYAYAY");
   
-    nameRef.child("movieRefs").push(movieRefID);
+    nameRef.push(movieRefID);
   
     $(this).parent().remove();
 

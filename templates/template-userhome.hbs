@@ -1,7 +1,7 @@
 <!-- Movie Div *** take out comments and put double handle bars around eaches and visibilities-->
 
 {{#each movieImg}}
-  <div class="col-md-3" id="poster-container"><img alt='{{Title}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{this}}" width="200px" height="300px">
+  <div class="col-md-3" id="poster-container"><span class="delete"><a href='#' class="delete" id='{{this}}'>x</a></span><img class="poster" alt='{{Title}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{this}}" width="200px" height="300px">
     <!-- Watched Btns -->
     
     <button type="button" class="btn" id="watchedBtn">Watched</button>
