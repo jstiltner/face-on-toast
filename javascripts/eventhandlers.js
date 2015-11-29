@@ -72,8 +72,8 @@ define(function(require) {
 // ***** Delete button
   $("body").on("click", ".deleteBtn", function(e){
     //for first delete function
-    var movieKey = $(this).attr(key);
-    console.log(key);
+    var movieKey = $(this).attr("key");
+    // console.log("key", key);
     deleteMovie.deleteMovie(movieKey);
 
     //for second delete function

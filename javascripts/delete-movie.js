@@ -10,23 +10,23 @@ define(function(require) {
 
   return {
 
-    deleteMovie: function(movieKey) {
-      var deferredDelete = Q.defer();
-      $.ajax({
-        url: "https://faceontoast.firebaseio.com/users/" + userStorage.getUid() + "/movieRefs/" + movieKey,
-        method: "DELETE"
-      }) /* end of ajax call */
-      .done(function(deleteMovieItem) {
-      console.log("Movie was deleted!");
-      deferredDelete.resolve(deleteMovieItem);
-      })
-      .fail(function(xhr, status, error) {
-        deferredDelete.reject(error); 
-      });
+    // deleteMovie: function(movieKey) {
+    //   var deferredDelete = Q.defer();
+    //   $.ajax({
+    //     url: "https://faceontoast.firebaseio.com/users/" + userStorage.getUid() + "/movieRefs/" + movieKey,
+    //     method: "DELETE"
+    //   }) /* end of ajax call */
+    //   .done(function(deleteMovieItem) {
+    //   console.log("Movie was deleted!");
+    //   deferredDelete.resolve(deleteMovieItem);
+    //   })
+    //   .fail(function(xhr, status, error) {
+    //     deferredDelete.reject(error); 
+    //   });
 
-    return deferredDelete.promise; 
+    // return deferredDelete.promise; 
 
-    }, /* end of deleteMovie function */
+    // }, /* end of deleteMovie function */
   
     deleteMovie2: function(parentID) {
       var deferredDelete2 = Q.defer();

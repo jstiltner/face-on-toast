@@ -11,7 +11,11 @@ define(function(require) {
     console.log("click", this.id);
     var nameRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
     console.log("userStorage.getUid()", userStorage.getUid());
-    nameRef.child("movieRefs").push(movieRefID);
+    // nameRef.child("movieRefs").push(movieRefID);
+    nameRef.child(movieRefID).set({
+      'watched':false,
+      'rating': 0
+      });
     $(this).parent().remove();
   }); /* end of 'add' movie button eventhandler */
 
