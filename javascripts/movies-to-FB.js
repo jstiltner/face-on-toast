@@ -9,19 +9,12 @@ define(function(require) {
   $("body").on('click', '.add-movie', function(e){
 
     var movieRefID = this.id;
+    console.log("movieRefID", movieRefID );
 // Check to see if the movie already exists in FB database
 // get movieRef via IMDBid path in FB
     var movieRef = new Firebase('https://faceontoast.firebaseio.com/movies/' + movieRefID);
-    console.log("movieRef variable holds", movieRef );
+    
 // if path !== invalid
-  movieRef.on("value", function(snapshot) {
-  if (snapshot === null){
-
-  }
-
-});
-
-
   // Ajax call to main OMDB for movie information
   var deferred = Q.defer();
     console.log("reached for info on movie:", movieRefID );
@@ -52,11 +45,18 @@ define(function(require) {
   var newMovieRef = new Firebase('https://faceontoast.firebaseio.com/movies/'+imdbID);      
     newMovieRef.set(objectforFB);
 
+        
+
             // if the call errors
             })
             .fail(function(xhr, status, error) {
               deferred.reject(error);
             });
+
+
+
+
+    console.log("click", this.id);
 
     var nameRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
     console.log("userStorage.getUid()", userStorage.getUid());
@@ -64,7 +64,7 @@ define(function(require) {
 
     console.log("I WORK YAYAYAY");
   
-    nameRef.push(movieRefID);
+    nameRef.child("movieRefs").push(movieRefID);
   
     $(this).parent().remove();
 
