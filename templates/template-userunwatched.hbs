@@ -1,5 +1,10 @@
 {{#each movie}}
 	<div class="col-md-3 poster-container" id="{{this}}"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
-	{{!-- <h3>{{Title}}</h3> --}}
+
+  <a href="#" class="deleteBtn">
+      <span key="{{@key}}" class="glyphicon glyphicon-trash"></span>
+  </a>
+  
+<!-- Watched Btns -->
 <button class="btn watchedBtn" id='{{imdbID}}'>Watched</button></div>
 {{/each}}

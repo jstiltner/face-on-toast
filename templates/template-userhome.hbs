@@ -2,6 +2,11 @@
 
 {{#each movieImg}}
   <div class="col-md-3 poster-container" id="{{this}}"><img alt='{{Title}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{this}}" width="200px" height="300px">
+
+  <a href="#" class="deleteBtn" key="{{key}}">
+      <span class="glyphicon glyphicon-trash"></span>
+  </a>
+  
     <!-- Watched Btns -->
     
     <button type="button" class="btn watchedBtn">Watched</button>

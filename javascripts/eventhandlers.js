@@ -10,6 +10,7 @@ define(function(require) {
   var login = require("4-login");
   var findMovie = require("findMovie");
   var addMovie = require("add-movie");
+  var deleteMovie = require("delete-movie");
   var moviesFB = require("movies-to-FB");
   var fbToDOM = require("FB-to-DOM");
   var watchedFBtoDOM = require("watched-FB-to-DOM");
@@ -29,7 +30,6 @@ define(function(require) {
     login.login();
   });
 
-
 // ***** Search/add movies functionality 
   //searches movies when enter key is pressed
   $("body").on('keyup', function (event) {
@@ -37,7 +37,6 @@ define(function(require) {
     findMovie.findMovie();
     }
   });
-
 
 // ***** Event handlers for watched and favorite buttons
   //updates FB to make watched = true when "watched" button is clicked
@@ -50,7 +49,7 @@ define(function(require) {
 
 // ***** Event handlers for movie filters
 
-  //shows your movies when user clicks "all movies"
+  //filters user's movies to show all the movies that the user has selected when user clicks "all movies"
   $("body").on('click', '#allYourMovies', function (event) {
     fbToDOM.fbToDOM();
   });
@@ -70,7 +69,24 @@ define(function(require) {
     filterFavorites.filterFavorites();
   });
 
-});
+// ***** Delete button
+  $("body").on("click", ".deleteBtn", function(e){
+    //for first delete function
+    var movieKey = $(this).attr(key);
+    console.log(key);
+    deleteMovie.deleteMovie(movieKey);
+
+    //for second delete function
+    var parent = $(this).parent();
+    var parentID = parent.attr("id");  
+    deleteMovie.deleteMovie2(parentID);
+
+      $(this).parent().remove();
+    });
+  });
+
+    
+
 
 
 
