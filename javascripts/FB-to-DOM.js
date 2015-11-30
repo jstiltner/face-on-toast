@@ -18,11 +18,9 @@ define(function(require) {
 			// Attach an asynchronous callback to read the data at our posts reference
 			userRef.once("value", function(snapshot) {
 				var importedData = snapshot.val();
-
-				console.log("userRef", userRef.child(importedData));
+			
 				console.log("imported Data", importedData );
-				console.log("imported Data", importedData.Object);
-				console.log("imported Data", importedData.child() );
+				
 				var movieRefs = [];
 				for (var key in importedData) {
 			      var datawithID = importedData[key];
