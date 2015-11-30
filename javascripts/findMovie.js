@@ -1,15 +1,15 @@
 define(function(require) {
-    var $ = require("jquery");
-    var Firebase = require("firebase");
-    var Q = require("q");
+  var Firebase = require("firebase");
+  var $ = require("jquery");
+  var Q = require("q");
 
   //handlebars templates
-    var templates = require("3-loadtemplates");
-    var userStorage = require("5-user-data-storage");
-    var populateNewUserView = require("populateNewUserView");
-    var populateUserHomeView = require("populateUserHomeView");
+  var templates = require("3-loadtemplates");
+  var userStorage = require("5-user-data-storage");
+  var populateNewUserView = require("populateNewUserView");
+  var populateUserHomeView = require("populateUserHomeView");
 
-    return {
+  return {
 
       findMovie: function(fn) { 
     //set up a few variables

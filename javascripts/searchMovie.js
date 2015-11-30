@@ -1,6 +1,6 @@
 define(function(require) {
-    var $ = require("jquery");
     var Firebase = require("firebase");
+    var $ = require("jquery");
     var Q = require("q");
 
   //handlebars templates

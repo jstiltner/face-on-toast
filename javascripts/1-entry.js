@@ -19,18 +19,22 @@ require.config({
 define(
 
   ["firebase", 
-   "2-dependencies",
-   "3-loadtemplates",
-   "5-user-data-storage", 
-   "populatelogin",
-   "eventhandlers"],
+  "2-dependencies",
+  "3-loadtemplates",
+  "5-user-data-storage",
+  "delete-movie", 
+  "populatelogin",
+  "eventhandlers",
+  "watched-FB-to-DOM"],
    
 function(
   firebase, 
   dependencies, 
   loadTemplates,
   userDataStorage,
+  deleteMovie,
   populateLogin,
-  eventhandlers) {
+  eventhandlers,
+  watchedFBtoDOM) {
 });
 

@@ -9,8 +9,7 @@ define(function(require) {
 
   return {
     filterUnwatched: function (e) {
-      e.preventDefault();
-      var movie = $(this).parents('.movie');
+      var movie = $(this).parent('.movie');
       post('/movie/' + $(this).data('id') + '/unwatched', function(data){
         movie.fadeOut();
       });

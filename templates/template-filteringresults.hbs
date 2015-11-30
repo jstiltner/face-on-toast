@@ -2,19 +2,19 @@
 {{#each movie}}
 	{{!-- if the movie is not in Firebase --}}
 	{{#if }}
-		<div class="col-md-3" id="poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
+		<div class="col-md-3 poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
 		{{!-- <h3>{{Title}}</h3> --}}
 		<button class="add-movie" id='{{imdbID}}'>Add Movie</button></div>
 	{{/if}}
 	{{!-- if the movie is already in Firebase, and unwatched --}}
 	{{#if }}
-		<div class="col-md-3" id="poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
+		<div class="col-md-3 poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
 		{{!-- <h3>{{Title}}</h3> --}}
-		<button class="watched-button" id='{{imdbID}}'>Watched</button></div>
+		<button class="watchedBtn btn" id='{{imdbID}}'>Watched</button></div>
 	{{/if}}
 	{{!-- if the movie is already in Firebase, and watched = True --}}
 	{{#if }}
-		<div class="col-md-3" id="poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
+		<div class="col-md-3 poster-container"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
 		{{!-- <h3>{{Title}}</h3> --}}
 		<button class="rate-button" id='{{imdbID}}'>Rate</button></div>
 	{{/if}}
