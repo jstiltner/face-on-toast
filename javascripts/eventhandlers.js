@@ -11,7 +11,6 @@ define(function(require) {
   var register = require("register");
   var login = require("4-login");
   var findMovie = require("findMovie");
-  var addMovie = require("add-movie");
   var deleteMovie = require("delete-movie");
   var moviesFB = require("movies-to-FB");
   var fbToDOM = require("FB-to-DOM");
@@ -38,7 +37,7 @@ define(function(require) {
 // ***** Search/add movies functionality 
   //searches movies when enter key is pressed
   $("body").on('keyup', function (event) {
-  	if (event.which===13) {
+  	if (event.which===13)
     findMovie.findMovie();
     }
   });
