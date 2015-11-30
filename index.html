@@ -1,61 +1,92 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Movie History</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie History</title>
+    <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <!-- begin stylesheets for star rating -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- end stylesheets for star rating -->
+  </head>
 
-  <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="styles/main.css">
-</head>
+  <body>
+    <div class="container-fluid">
+<!-- ******************* NAV BAR ******************* -->
+      <header id="view-navBar" class="navbar navbar-default hidden">
+        <div>
+          <input type="text" class="form-control" id="movieToSearch" placeholder="Find a movie...">
+        </div>
+        <div>
+          <a id="logoutBtn" href="#">Logout</a>
+        </div>
+      </header> 
 
-<body>
-<header>
-	<nav class="navbar-fixed-top navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+<!-- ******************* Filter Options ******************* -->
+      <div id="view-filters" class="hidden">
+        <button type="button" class="btn btn-link" id="allYourMovies">All Your Movies</button>
+        <button type="button" class="btn btn-link" id="watched">Watched</button>
+        <button type="button" class="btn btn-link" id="unwatched">Unwatched</button>
+        <button type="button" class="btn btn-link" id="favorites">Favorites</button>
+      </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!-- ******************* Log-in View ******************* -->
+      <div id="view-login">
+        <!-- load template-login here -->
+      </div>
 
-<ul class="nav navbar-nav navbar-left">
+<!-- ******************* Find Movie Modal View ******************* -->
+      <div id="view-find-movie"></div>
 
-        <li><button type="button" class="btn btn-default navbar-btn" id="profile-edit">Find Movie</a></li>
-        <ul class="nav navbar-nav navbar-left">
-        <li><button type="button" class="btn btn-default navbar-btn"  id="see-the-world">Search my movies</a></li>
-        
-<ul class="nav navbar-nav navbar-right">
-  
-      
-        <li class="navbar-right">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log Out </a>
-          
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div>
-  <!-- .container-fluid -->
-</nav>
+<!-- ******************* Find Movie Results View ******************* -->
+      <div id="view-find-search-results"></div>
 
-</header>
-<div id="view-login"></div>
-<div id="view-find-movie"></div>
-<div id="view-new-user"></div>
-<div id="view-user-home"></div>
-<div id="view user-watched"></div>
-<div id="view-user-unwatched"></div>
-<div id="view-search-my-movie"></div>
+<!-- ******************* New User View ******************* -->      
+      <div id="view-new-user"></div>
+
+<!-- ******************* User Home View ******************* -->  
+      <div id="view-user-home"></div>
+
+<!-- ******************* User Watched View ******************* -->  
+      <div id="view user-watched"></div>
+ 
+<!-- ******************* User Unwatched View ******************* -->  
+      <div id="view-user-unwatched"></div>
+
+<!-- ******************* Search My Movie View ******************* -->  
+      <div id="view-search-my-movie"></div>
+
+<!-- InfoModal Popup       -->
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Movie Details</h4>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              
+            </div>
+        </div>
+    </div>
+</div>
+    
+    </div> <!-- .container-fluid -->
+    <script data-main="javascripts/1-entry" src="lib/bower_components/requirejs/require.js"></script>
+    <!-- begin script tags for star rating -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/star-rating.js" type="text/javascript"></script>
+    <!-- end script tags for star rating -->
 
 
-  <script data-main="javascripts/main" src="lib/bower_components/requirejs/require.js"></script>
-
-</body>
+  </body>
 </html>
-
-
