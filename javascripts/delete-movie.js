@@ -28,23 +28,23 @@ define(function(require) {
 
     // }, /* end of deleteMovie function */
   
-    deleteMovie2: function(parentID) {
-      var deferredDelete2 = Q.defer();
-      $.ajax({
-        url: "https://faceontoast.firebaseio.com/users/" + userStorage.getUid() + "/" + parentID,
-        method: "DELETE"
-      }) /* end of ajax call */
-      .done(function(deleteMovieItem) {
-      console.log("Movie was deleted!");
-      deferredDelete2.resolve(deleteMovieItem);
-      })
-      .fail(function(xhr, status, error) {
-        deferredDelete2.reject(error); 
-      });
+    // deleteMovie2: function(parentID) {
+    //   var deferredDelete2 = Q.defer();
+    //   $.ajax({
+    //     url: "https://faceontoast.firebaseio.com/users/" + userStorage.getUid() + "/" + parentID,
+    //     method: "DELETE"
+    //   }) /* end of ajax call */
+    //   .done(function(deleteMovieItem) {
+    //   console.log("Movie was deleted!");
+    //   deferredDelete2.resolve(deleteMovieItem);
+    //   })
+    //   .fail(function(xhr, status, error) {
+    //     deferredDelete2.reject(error); 
+    //   });
 
-    return deferredDelete2.promise; 
+    // return deferredDelete2.promise; 
 
-    } /* end of deleteMovie function */
+    // }  end of deleteMovie function 
 
   }; /* end of return */
     

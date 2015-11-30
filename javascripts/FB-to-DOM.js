@@ -6,7 +6,7 @@ define(function(require) {
   //handlebars templates
     var templates = require("3-loadtemplates");
     var userStorage = require("5-user-data-storage");
-	var importArray = [];
+	  var importArray = [];
 
 	return {
   
@@ -14,11 +14,15 @@ define(function(require) {
 	        console.log("fbToDOM function fired.");
 	        //set up a few variables
             //sets up deferred object for promise
-            var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid()+ '/movieRefs');
+            var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
 			// Attach an asynchronous callback to read the data at our posts reference
 			userRef.once("value", function(snapshot) {
 				var importedData = snapshot.val();
+
+				console.log("userRef", userRef.child(importedData));
 				console.log("imported Data", importedData );
+				console.log("imported Data", importedData.Object);
+				console.log("imported Data", importedData.child() );
 				var movieRefs = [];
 				for (var key in importedData) {
 			      var datawithID = importedData[key];
@@ -29,6 +33,7 @@ define(function(require) {
 			      importArray[importArray.length] = datawithID;
 				}
 			  var objectForTemplate = {movieImg: importArray};
+			  console.log("objectForTemplate", objectForTemplate);
 			  	importArray = [];
 			  $("#view-user-home").html(templates.userhome(objectForTemplate));
 			  $("#view-user-home").show();
