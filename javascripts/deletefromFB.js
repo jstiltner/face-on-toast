@@ -4,10 +4,6 @@ define(function(require){
 	return{
 	deleteIt: function(e){
 
-
-	// var byeRef = new Firebase("https://faceontoast.firebaseio.com/users/"+userStorage.getUid()+"/movieRefs/"+);
-	
-	// byeRef.remove();
 	console.log("success!");	}
 	};
 	});

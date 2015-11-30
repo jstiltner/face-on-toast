@@ -11,7 +11,7 @@ define(function(require) {
     console.log("movieRefID", movieRefID );
 // Check to see if the movie already exists in FB database
 // get movieRef via IMDBid path in FB
-    var movieRef = new Firebase('https://faceontoast.firebaseio.com/movies/' + movieRefID);
+    var movieRef = new Firebase('https://movie-history-djs.firebaseio.com/users/' + movieRefID);
     
 // if path !== invalid
   // Ajax call to main OMDB for movie information
@@ -41,7 +41,7 @@ define(function(require) {
   
 };
   console.log("objectforFB", objectforFB );
-  var newMovieRef = new Firebase('https://faceontoast.firebaseio.com/movies/'+imdbID);      
+  var newMovieRef = new Firebase('https://movie-history-djs.firebaseio.com/users/'+imdbID);      
     newMovieRef.set(objectforFB);
 
         
@@ -56,7 +56,7 @@ define(function(require) {
 
 
     console.log("click", this.id);
-    var nameRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
+    var nameRef = new Firebase('https://movie-history-djs.firebaseio.com/users/' + userStorage.getUid());
     console.log("userStorage.getUid()", userStorage.getUid());
 
     nameRef.child(movieRefID).set({
@@ -68,7 +68,7 @@ define(function(require) {
 
   return {
     showAddedMovies: function(profileID) {
-      var ref = new Firebase("https://faceontoast.firebaseio.com");
+      var ref = new Firebase("https://movie-history-djs.firebaseio.com");
 
       ref.child("users").once("value", function(snapshot) {
         var users = snapshot.val();

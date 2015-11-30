@@ -10,8 +10,6 @@ define(function(require) {
     var populateUserHomeView = require("populateUserHomeView");
 
     return {
-        // getPoster: function(fn){
-            // console.log("getposter fired and received ID of", data.IMDBid );
         
     searchMovie: function(fn) { 
         //set up a few variables
@@ -39,28 +37,9 @@ define(function(require) {
             return deferred.promise;
         },
 
-      // secondXHR: function(data) {
-      //       var deferred = Q.defer();
-      //       console.log("second XHR call fired", data);
-
-      //     $.ajax({
-      //       type: "GET",
-      //       // dataType: "json",
-      //       url: "http://img.omdbapi.com/?apikey=7c212437&i="+data.imdbID
-            
-      //     }).done(function(data) {
-      //       deferred.resolve(data);
-
-      //     }).fail(function(xhr, status, error) {
-      //       deferred.reject(error);
-      //     });
-
-      //     return deferred.promise;
-      //   }
-
 
     };
         
-    });
-                
+});
+            
             

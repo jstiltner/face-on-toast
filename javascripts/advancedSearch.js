@@ -5,7 +5,7 @@ define(function(require){
 	var title = $("#movieToSearch").val();  
       var data = {};  
 	// grab snapshot of firebase
-	var usersMoviesRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
+	var usersMoviesRef = new Firebase('https://movie-history-djs.firebaseio.com/users/' + userStorage.getUid());
 	//ajax call to omdb search engine 
 	$.ajax({ 
             type: "GET",

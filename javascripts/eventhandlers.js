@@ -9,7 +9,6 @@ define(function(require) {
   var register = require("register");
   var login = require("4-login");
   var findMovie = require("findMovie");
-  var addMovie = require("add-movie");
   var deleteMovie = require("delete-movie");
   var moviesFB = require("movies-to-FB");
   var fbToDOM = require("FB-to-DOM");
