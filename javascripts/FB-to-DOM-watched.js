@@ -5,9 +5,8 @@ define(function(require) {
 
   //handlebars templates
     var templates = require("3-loadtemplates");
-    var 
     var userStorage = require("5-user-data-storage");
-    var watchedArray = [];
+    var movieArray = [];
 
   return {
   
@@ -17,42 +16,28 @@ define(function(require) {
             var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
       // Attach an asynchronous callback to read the data at our posts reference
       userRef.once("value", function(snapshot) {
-        var watchedData = snapshot.val();
-
-        console.log("watched Data", watchedData);
-
-        var watchedRefs = [];
-        for (var key in watchedData) {
-          if (watchedData.watched === true) {
-            var watchedwithID = watchedData[key];
-            console.log("watched with id", watchedwithID);
-            watchedwithID.key = key;
-            console.log("key", key);
-            watchedwithID.watchedRefs = watchedRefs;
-            watchedArray[watchedArray.length] = watchedwithID;
-          }
+        var allMovieData = snapshot.val();
+console.log("allMovieData", allMovieData);
+        var allMovieRefs = [];
+        for (var key in allMovieData) {
+          var moviewithID = allMovieData[key];
+          moviewithID.key = key;
+          console.log("key", key);
+          moviewithID.allMovieRefs = allMovieRefs;
+          movieArray[movieArray.length] = moviewithID; 
         }
-        var watchedForTemplate = {movieWatched: watchedArray};
-        console.log("watchedForTemplate", watchedForTemplate);
-        watchedArray = [];
+        var movieForTemplate = {movieArray};
+        console.log("movieForTemplate", movieForTemplate);
+        movieArray = [];
 
-
-        
-      
-        console.log("imported Data", importedData );
-        
-        for (var key in importedData) {
-            var datawithID = importedData[key];
-            console.log("data with id", datawithID);
-            datawithID.key = key;
-            console.log("key", key);
-            datawithID.movieRefs=movieRefs;
-            importArray[importArray.length] = datawithID;
-        }
-        var objectForTemplate = {movieImg: importArray};
-        console.log("objectForTemplate", objectForTemplate);
-          importArray = [];
-
+        $("#view-user-watched").html(templates.userwatched(movieForTemplate));
+          $("#view-user-watched").show();
+          $("#view-new-user").hide();
+          $("#view-user-home").hide();
+          $("#view-find-movie").hide();
+          $("#view-user-unwatched").hide();
+          $("#view-search-my-movie").hide();
+          $("#view-find-search-results").hide();
 
 
       }, function (errorObject) {

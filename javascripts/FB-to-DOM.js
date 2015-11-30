@@ -32,16 +32,15 @@ define(function(require) {
 			  var objectForTemplate = {movieImg: importArray};
 			  console.log("objectForTemplate", objectForTemplate);
 			  	importArray = [];
+
 			  $("#view-user-home").html(templates.userhome(objectForTemplate));
 			  $("#view-user-home").show();
 			  $("#view-find-movie").hide();
-			  $("#view user-watched").hide();
+			  $("#view-user-watched").hide();
 			  $("#view-user-unwatched").hide();
 			  $("#view-search-my-movie").hide();
 			  $("#view-find-search-results").hide();
-			  console.log("objectForTemplate" ,objectForTemplate);
-
-
+			  
 
 			}, function (errorObject) {
 			  console.log("The read failed: " + errorObject.code);
