@@ -71,19 +71,13 @@ define(function(require) {
 
 // ***** Delete button
   $("body").on("click", ".deleteBtn", function(e){
-    //for first delete function
-    var movieKey = $(this).attr("key");
-    // console.log("key", key);
-    deleteMovie.deleteMovie(movieKey);
-
-    //for second delete function
-    var parent = $(this).parent();
-    var parentID = parent.attr("id");  
-    deleteMovie.deleteMovie2(parentID);
-
-      $(this).parent().remove();
-    });
+    var parent = $(this).parent().attr("id");
+    console.log("parent", parent);  
+    deleteMovie.deleteMovie(parent);
+    $(this).parent().remove();
   });
+
+});
 
     
 
