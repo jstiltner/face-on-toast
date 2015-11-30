@@ -1,15 +1,14 @@
 <!-- Movie Div *** take out comments and put double handle bars around eaches and visibilities-->
-
 {{#each movieImg}}
 
-  <div class="col-md-3 poster-container" id="{{key}}"><img alt='{{Title}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{key}}" width="200px" height="300px">
-
-  <a href="#" class="deleteBtn" key="{{key}}">
-      <span class="glyphicon glyphicon-trash"></span>
-  </a>
+ 	<div class="col-md-3 poster-container" id="{{key}}"><img alt='{{Title}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{key}}" width="200px" height="300px">
+		<input type="number" class="rating" min="1" max="5" step="1">
+  		<a href="#" class="deleteBtn" key="{{key}}">
+      		<span class="glyphicon glyphicon-trash"></span>
+  		</a>
   
-    <!-- Watched Btns -->
+   	 <!-- Watched Btns -->
     
-    <button type="button" class="btn watchedBtn">Watched</button>
-  </div>
+    	<button type="button" class="btn watchedBtn">Watched</button>
+ 	</div>
 {{/each}}

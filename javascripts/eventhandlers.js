@@ -2,6 +2,8 @@ define(function(require) {
   var Firebase = require("firebase");
   var $ = require("jquery");
   var q = require("q");
+  var bootstrap = require("bootstrap");
+  var stars = require("stars");
 
   //handlebars templates
   var templates = require("3-loadtemplates");
@@ -29,6 +31,7 @@ define(function(require) {
   //shows user home view after user clicks 'log in' button
   $("body").on('click', "#log-in", function (event) {
     login.login();
+    $(".rating").rating();
   });
 
 // ***** Search/add movies functionality 

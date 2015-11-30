@@ -6,10 +6,12 @@ require.config({
     'hbs': '../lib/bower_components/require-handlebars-plugin/hbs',
     'q': '../lib/bower_components/q/q',
     'firebase': '../lib/bower_components/firebase/firebase',
-    'bootstrap': '../lib/bower_components/bootstrap/dist/js/bootstrap.min'
+    'bootstrap': '../lib/bower_components/bootstrap/dist/js/bootstrap.min',
+    'stars': '../lib/bower_components/bootstrap-star-rating/js/star-rating.min'
   },
   shim: {
     'bootstrap': ['jquery'],
+    'stars' : ['bootstrap'],
     'firebase': {
       exports: 'Firebase'
     }
@@ -25,7 +27,9 @@ define(
   "delete-movie", 
   "populatelogin",
   "eventhandlers",
-  "watched-FB-to-DOM"],
+  "watched-FB-to-DOM",
+  "stars",
+  "populateUserHomeView"],
    
 function(
   firebase, 
@@ -35,6 +39,8 @@ function(
   deleteMovie,
   populateLogin,
   eventhandlers,
-  watchedFBtoDOM) {
+  watchedFBtoDOM,
+  stars,
+  populateUserHomeView) {
 });
 
