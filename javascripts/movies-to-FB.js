@@ -2,7 +2,9 @@ define(function(require) {
   var Firebase = require("firebase");
   var $ = require("jquery");
   var Q = require("q");
+
   var userStorage = require("5-user-data-storage");
+  var templates = require("3-loadtemplates");
     
   var moviesArray = [];
 

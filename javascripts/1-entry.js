@@ -25,7 +25,7 @@ define(
   "delete-movie", 
   "populatelogin",
   "eventhandlers",
-  "watched-FB-to-DOM"],
+  "watched-btn-true"],
    
 function(
   firebase, 
@@ -35,6 +35,6 @@ function(
   deleteMovie,
   populateLogin,
   eventhandlers,
-  watchedFBtoDOM) {
+  watchedBtnTrue) {
 });
 

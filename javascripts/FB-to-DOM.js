@@ -13,7 +13,6 @@ define(function(require) {
 	    fbToDOM: function(fn) { 
 	        console.log("fbToDOM function fired.");
 	        //set up a few variables
-            //sets up deferred object for promise
             var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
 			// Attach an asynchronous callback to read the data at our posts reference
 			userRef.once("value", function(snapshot) {
