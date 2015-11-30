@@ -29,7 +29,8 @@ define(
   "eventhandlers",
   "watched-FB-to-DOM",
   "stars",
-  "populateUserHomeView"],
+  "populateUserHomeView",
+  "watched-btn-true"],
    
 function(
   firebase, 
@@ -41,6 +42,8 @@ function(
   eventhandlers,
   watchedFBtoDOM,
   stars,
-  populateUserHomeView) {
+  populateUserHomeView,
+  watchedBtnTrue) {
+
 });
 
