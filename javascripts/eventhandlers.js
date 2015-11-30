@@ -8,7 +8,7 @@ define(function(require) {
   var userStorage = require("5-user-data-storage");
   var register = require("register");
   var login = require("4-login");
-  var findMovie = require("findMovie");
+  var findMovie = require("advancedSearch");
   var addMovie = require("add-movie");
   var moviesFB = require("movies-to-FB");
   var fbToDOM = require("FB-to-DOM");
