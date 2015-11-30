@@ -18,12 +18,21 @@ define(function(require) {
   var filterUnwatched = require("filter-unwatched");
   var filterFavorites = require("filter-favorites");
   var deletor = require("deletefromFB");
+  var infoModal = require("infopopup");
+
 
 
 // ***** Event handlers for log-in/register
   //shows new user view after user clicks 'register' button
   $("body").on('click', "#register", function() {
     register.register();
+  });
+
+//shows user home view after user clicks 'log in' button
+  $("body").on('click', ".poster", function (e) {
+    console.log("click!");
+    infoModal.popup(event.target.id);
+    $("#myModal").modal('show');
   });
 
   //shows user home view after user clicks 'log in' button
