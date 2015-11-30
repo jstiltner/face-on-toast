@@ -2,6 +2,8 @@ define(function(require) {
   var Firebase = require("firebase");
   var $ = require("jquery");
   var q = require("q");
+  var bootstrap = require("bootstrap");
+  var stars = require("stars");
 
   //handlebars templates
   var templates = require("3-loadtemplates");
@@ -9,14 +11,15 @@ define(function(require) {
   var register = require("register");
   var login = require("4-login");
   var findMovie = require("findMovie");
-  var addMovie = require("add-movie");
   var deleteMovie = require("delete-movie");
   var moviesFB = require("movies-to-FB");
   var fbToDOM = require("FB-to-DOM");
-  var watchedFBtoDOM = require("watched-FB-to-DOM");
+  var fbToDOMwatched = require("FB-to-DOM-watched");
+  var watchedBtnTrue = require("watched-btn-true");
   var filterWatched = require("filter-watched");
   var filterUnwatched = require("filter-unwatched");
   var filterFavorites = require("filter-favorites");
+  var deletor = require("deletefromFB");
 
 
 // ***** Event handlers for log-in/register
@@ -28,22 +31,23 @@ define(function(require) {
   //shows user home view after user clicks 'log in' button
   $("body").on('click', "#log-in", function (event) {
     login.login();
+    $(".rating").rating();
   });
 
 // ***** Search/add movies functionality 
   //searches movies when enter key is pressed
   $("body").on('keyup', function (event) {
-  	if (event.which===13) {
+  	if (event.which===13)
     findMovie.findMovie();
-    }
   });
 
 // ***** Event handlers for watched and favorite buttons
   //updates FB to make watched = true when "watched" button is clicked
   $("body").on('click', '.watchedBtn', function (event) {
-    var parent = $(this).parent();
-    var parentID = parent.attr("id");
-    watchedFBtoDOM.watchedTrue(parentID);
+    var parentID = $(this).parent().attr("id");
+
+    console.log("parentID", parentID);
+    watchedBtnTrue.watchedTrue(parentID);
     $(this).parent().remove();
   });
 
@@ -57,6 +61,7 @@ define(function(require) {
   //filters user's movies to show only their movies marked 'watched', when "watched" filter is clicked.
   $("body").on('click', "#watched", function() {
     filterWatched.filterWatched();
+    fbToDOMwatched.fbToDOMwatched();
   });
 
   //filters user's movies to show only their movies marked 'unwatched', when "unwatched" filter is clicked.
@@ -68,6 +73,7 @@ define(function(require) {
   $("body").on('click', "#favorites", function() {
     filterFavorites.filterFavorites();
   });
+
 
 // ***** Delete button
   $("body").on("click", ".deleteBtn", function(e){

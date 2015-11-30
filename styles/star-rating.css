@@ -23,8 +23,4 @@ a.delete {
 a.delete:hover {
   text-decoration: none; }
 
-.rating {
-  glyphicon: true;
-  stars: 5; }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=star-rating.css.map */

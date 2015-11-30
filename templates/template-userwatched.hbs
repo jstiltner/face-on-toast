@@ -1,9 +1,15 @@
-{{#each movie}}
-	<div class="col-md-3 poster-container" id="{{this}}"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
+{{#each movieArray}}
+  {{#if watched}}
+    <div class="col-md-3 poster-container" id="{{@key}}">
 
-  <a href="#" class="deleteBtn">
-      <span key="{{@key}}" class="glyphicon glyphicon-trash"></span>
-  </a>
+        <img alt="{{Title}}"
+        src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' width="200px" height="300px">
 
-<button class="rate-button" id='{{imdbID}}'>Rate</button></div>
+        <a href="#" class="deleteBtn" key="{{@key}}">
+            <span class="glyphicon glyphicon-trash"></span>
+        </a>
+
+        <input type="number" class="rating" data-min="1" data-max="5" data-step="1">
+    </div>
+  {{/if}}
 {{/each}}

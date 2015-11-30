@@ -17,7 +17,7 @@ define(function(require) {
       // Attach an asynchronous callback to read the data at our posts reference
       userRef.once("value", function(snapshot) {
         var allMovieData = snapshot.val();
-        console.log("allMovieData", allMovieData);
+
         var allMovieRefs = [];
         for (var key in allMovieData) {
           var moviewithID = allMovieData[key];
