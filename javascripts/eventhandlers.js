@@ -39,7 +39,6 @@ define(function(require) {
   $("body").on('keyup', function (event) {
   	if (event.which===13)
     findMovie.findMovie();
-    }
   });
 
 // ***** Event handlers for watched and favorite buttons
