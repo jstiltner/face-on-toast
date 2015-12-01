@@ -20,6 +20,7 @@ define(function(require) {
   var filterUnwatched = require("filter-unwatched");
   var filterFavorites = require("filter-favorites");
   var deletor = require("deletefromFB");
+  var starRatings = require("star-ratings");
 
 
 // ***** Event handlers for log-in/register
@@ -31,6 +32,7 @@ define(function(require) {
   //shows user home view after user clicks 'log in' button
   $("body").on('click', "#log-in", function (event) {
     loginPromise.login();
+    starRatings.starRatings();
   });
 
 // ***** Search/add movies functionality 
@@ -44,7 +46,6 @@ define(function(require) {
   //updates FB to make watched = true when "watched" button is clicked
   $("body").on('click', '.watchedBtn', function (event) {
     var parentID = $(this).parent().attr("id");
-
     console.log("parentID", parentID);
     watchedBtnTrue.watchedTrue(parentID);
     $(this).parent().remove();
@@ -55,12 +56,14 @@ define(function(require) {
   //filters user's movies to show all the movies that the user has selected when user clicks "all movies"
   $("body").on('click', '#allYourMovies', function (event) {
     fbToDOM.fbToDOM();
+    starRatings.starRatings();
   });
     
   //filters user's movies to show only their movies marked 'watched', when "watched" filter is clicked.
   $("body").on('click', "#watched", function() {
     filterWatched.filterWatched();
     fbToDOMwatched.fbToDOMwatched();
+    starRatings.starRatings();
   });
 
   //filters user's movies to show only their movies marked 'unwatched', when "unwatched" filter is clicked.

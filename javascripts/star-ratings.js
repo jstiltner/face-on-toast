@@ -5,9 +5,11 @@ define(function(require) {
 
   //handlebars templates
     var templates = require("3-loadtemplates");
+    var stars = require("stars");
 
     return {
         starRatings: function(fn) {   
+        	$(".rating").rating();
         }
-  };
+    };
 });
