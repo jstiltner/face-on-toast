@@ -2,6 +2,7 @@ define(function(require) {
     var $ = require("jquery");
     var Firebase = require("firebase");
     var Q = require("q");
+    var stars = require("stars");
 
   //handlebars templates
     var templates = require("3-loadtemplates");
@@ -31,6 +32,7 @@ define(function(require) {
         movieArray = [];
 
         $("#view-user-favorites").html(templates.userfavorites(movieForTemplate));
+        $(".rating").rating();
 
       }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);

@@ -18,7 +18,6 @@ define(function(require) {
   var filterUnwatched = require("filter-unwatched");
   var filterFavorites = require("filter-favorites");
   var moviesFB = require("movies-to-FB");
-  var deletor = require("deletefromFB");
   var watchedBtnTrue = require("watched-btn-true");
   var starEvent = require("starEvent");
 
