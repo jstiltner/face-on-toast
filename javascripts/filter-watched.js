@@ -10,7 +10,7 @@ define(function(require) {
   return {
     filterWatched: function (e) {
       popWatched.popWatched();
-      console.log("function was ran");
+      console.log("filterWatched function fired.");
     }
   };
 });

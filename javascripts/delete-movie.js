@@ -6,8 +6,6 @@ define(function(require) {
   var Q = require("q");
   var userStorage = require("5-user-data-storage");
 
-  console.log("delete please");
-
   return {
   
     deleteMovie: function(parent) {
