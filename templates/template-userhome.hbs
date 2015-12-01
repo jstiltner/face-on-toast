@@ -9,7 +9,7 @@
   </a>
 
 {{#if watched}}
-    <input type="number" key ="{{key}}" class="rating" min="1" max="10" step="1">
+    <input type="number" key ="{{key}}" class="rating" min="1" max="10" step="1" value='{{rating}}'>
 {{/if}}
 {{#unless watched}}
       <button class="btn watchedBtn" id='{{key}}'>Watched</button></div>
