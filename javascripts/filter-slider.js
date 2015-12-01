@@ -22,7 +22,5 @@ define(function(require) {
       $( "#rating" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $(  "#slider-range" ).slider( "values", 1 ) );
 
     }
-  }
-
-
+  };
 });

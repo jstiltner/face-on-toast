@@ -67,7 +67,7 @@ define(function(require) {
   });
 
   //filters user's movies to show only their favorited (5 stars) movies, when "favorites" filter is clicked.
-  $("body").on('click', "#favorites", function() {
+  $("body").on('rating.change',"#ratingScale", function() {
     filterFavorites.filterFaves();
   });
 
@@ -82,7 +82,7 @@ define(function(require) {
   });
 
 // ***** star clicks
-  $("body").on('rating.change',".rating", function (event) {
+  $("body").on('rating.change',".movieRating", function (event) {
     //this is the minimum number of stars to filter a movie into your favorites view
     var faveMin = 7;
     console.log("this", $(this));

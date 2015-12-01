@@ -2,6 +2,7 @@ define(function(require) {
     var Firebase = require("firebase");
     var $ = require("jquery");
     var Q = require("q");
+    var stars = require("stars");
 
   //handlebars templates
     var templates = require("3-loadtemplates");
@@ -30,6 +31,7 @@ define(function(require) {
               deferred.resolve(data);
               console.log("data", data, length);
               $("#view-find-movie").html(templates.findMovieSearchResults(data));
+              $(".rating").rating();
             })
             // if the call errors
             .fail(function(xhr, status, error) {

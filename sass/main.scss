@@ -11,6 +11,18 @@ header div {
   padding: 0px 20px;
 }
 
+.filterDivs {
+    display:inline-block;
+    padding: 0px 20px;
+}
+
+#view-filters {
+    background-color: #fffff0;
+    padding: 15px;
+    margin: 20px;
+    display: block;
+}
+
 .poster{
 	position:relative;
 
@@ -34,4 +46,10 @@ a.delete:hover{
 .rating {
 	glyphicon: true;
 	stars: 5;
+}
+
+#ratingScale{
+    border: 0, solid, #f6931f;
+    font-weight: bold;
+    display: inline-block;
 }
