@@ -33,7 +33,7 @@ define(function(require) {
         movieArray = [];
 
         $("#view-user-watched").html(templates.userwatched(movieForTemplate));
-
+        $(".rating").rating();
       }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
       });

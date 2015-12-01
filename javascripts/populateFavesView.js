@@ -5,6 +5,7 @@ define(function(require){
     return {
         popFaves: function (fn) { 
           fbToDOMfaves.fbToDOMfaves();
+          $(".rating").rating();
           $("#view-new-user").hide();
           $("#view-user-home").hide();
           $("#view-user-watched").hide();

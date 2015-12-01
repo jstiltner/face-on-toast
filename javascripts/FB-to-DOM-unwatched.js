@@ -31,6 +31,7 @@ define(function(require) {
         movieArray = [];
 
         $("#view-user-unwatched").html(templates.userunwatched(movieForTemplate));
+          $(".rating").rating();
           $("#view-user-unwatched").show();
           $("#view-new-user").hide();
           $("#view-user-home").hide();
