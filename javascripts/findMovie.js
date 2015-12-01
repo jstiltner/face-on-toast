@@ -25,11 +25,12 @@ define(function(require) {
             url: "http://www.omdbapi.com/?s=" + title})
 
         //when done do the following:
-        .done(function(data) {    
+        .done(function(data) { 
+        var objectForTemplate = {movie: data.Search};   
           // pass the results 
           deferred.resolve(data);
           console.log("data", data.Search);
-          $("#view-find-search-results").html(templates.searchresults({movie: data.Search}));
+          $("#view-find-search-results").html(templates.findMovieSearchResults(objectForTemplate));
           $("#view-login").hide();
           $("#view-new-user").hide();
           $("#view-user-home").hide();

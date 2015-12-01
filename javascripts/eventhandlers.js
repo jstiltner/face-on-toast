@@ -31,6 +31,7 @@ define(function(require) {
   //shows user home view after user clicks 'log in' button
   $("body").on('click', "#log-in", function (event) {
     loginPromise.login();
+    $(".rating").rating();
   });
 
 // ***** Search/add movies functionality 
@@ -55,6 +56,7 @@ define(function(require) {
   //filters user's movies to show all the movies that the user has selected when user clicks "all movies"
   $("body").on('click', '#allYourMovies', function (event) {
     fbToDOM.fbToDOM();
+    $(".rating").rating();
   });
     
   //filters user's movies to show only their movies marked 'watched', when "watched" filter is clicked.
