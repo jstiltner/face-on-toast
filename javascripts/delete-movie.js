@@ -11,7 +11,7 @@ define(function(require) {
     deleteMovie: function(parent) {
       var deferredDelete = Q.defer();
       var deleteRef = new Firebase ("https://faceontoast.firebaseio.com/users/" + userStorage.getUid() + "/" + parent);
-      deleteRef.remove();
+      deleteRef.child("active").set(false);
 
     return deferredDelete.promise; 
 

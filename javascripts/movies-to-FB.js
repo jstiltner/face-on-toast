@@ -63,7 +63,8 @@ define(function(require) {
 
     nameRef.child(movieRefID).set({
       'watched':false,
-      'rating': 0
+      'rating': 0,
+      'active': true
       });
     $(this).parent().remove();
   }); /* end of 'add' movie button eventhandler */
