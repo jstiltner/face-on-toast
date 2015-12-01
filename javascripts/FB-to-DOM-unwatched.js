@@ -10,8 +10,8 @@ define(function(require) {
 
   return {
   
-      fbToDOMwatched: function(fn) { 
-          console.log("fbToDOMwatched function fired.");
+      fbToDOMunwatched: function(fn) { 
+          console.log("fbToDOMunwatched function fired.");
           //set up a few variables
             var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
       // Attach an asynchronous callback to read the data at our posts reference
@@ -30,12 +30,12 @@ define(function(require) {
         console.log("movieForTemplate", movieForTemplate);
         movieArray = [];
 
-        $("#view-user-watched").html(templates.userwatched(movieForTemplate));
-          $("#view-user-watched").show();
+        $("#view-user-unwatched").html(templates.userunwatched(movieForTemplate));
+          $("#view-user-unwatched").show();
           $("#view-new-user").hide();
           $("#view-user-home").hide();
           $("#view-find-movie").hide();
-          $("#view-user-unwatched").hide();
+          $("#view-user-watched").hide();
           $("#view-search-my-movie").hide();
           $("#view-find-search-results").hide();
 

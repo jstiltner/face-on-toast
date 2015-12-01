@@ -21,6 +21,7 @@ define(function(require) {
   var filterFavorites = require("filter-favorites");
   var deletor = require("deletefromFB");
   var infoModal = require("infopopup");
+  var fbToDOMunwatched = require("FB-to-DOM-unwatched");
 
 
 
@@ -57,7 +58,8 @@ define(function(require) {
 
     console.log("parentID", parentID);
     watchedBtnTrue.watchedTrue(parentID);
-    $(this).parent().remove();
+    $(this).remove();
+    // $(this).parent().remove();
   });
 
 // ***** Event handlers for movie filters
@@ -75,7 +77,7 @@ define(function(require) {
 
   //filters user's movies to show only their movies marked 'unwatched', when "unwatched" filter is clicked.
   $("body").on('click', "#unwatched", function() {
-    filterUnwatched.filterUnwatched();
+    fbToDOMunwatched.fbToDOMunwatched();
   });
 
   //filters user's movies to show only their favorited (5 stars) movies, when "favorites" filter is clicked.

@@ -28,8 +28,13 @@ define(function(require) {
         .done(function(data) {    
           // pass the results 
           deferred.resolve(data);
-          console.log("data", data.Search);
-          $("#view-find-search-results").html(templates.searchresults({movie: data.Search}));
+          
+        // var ref = new Firebase ('https://faceontoast.firebaseio.com/users/' + userStorage.getUid()+ );)  
+
+
+
+          console.log("data.Search", data.Search);
+          $("#view-find-search-results").html(templates.filteringresults({movie:data.Search}));
           $("#view-login").hide();
           $("#view-new-user").hide();
           $("#view-user-home").hide();

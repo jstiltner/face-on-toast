@@ -1,11 +1,11 @@
-{{#each movieArray}}
+{{#each movie}}
   {{#if watched}}
-    <div class="col-md-3 poster-container" id="{{@key}}">
+    <div class="col-md-3 poster-container" id="{{key}}">
 
         <img alt="{{Title}}"
         src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' width="200px" height="300px">
 
-        <a href="#" class="deleteBtn" key="{{@key}}">
+        <a href="#" class="deleteBtn" key="{{key}}">
             <span class="glyphicon glyphicon-trash"></span>
         </a>
 
