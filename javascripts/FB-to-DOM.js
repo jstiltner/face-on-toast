@@ -2,6 +2,7 @@ define(function(require) {
     var $ = require("jquery");
     var Firebase = require("firebase");
     var Q = require("q");
+    var stars = require("stars");
 
   //handlebars templates
     var templates = require("3-loadtemplates");
@@ -18,26 +19,36 @@ define(function(require) {
 			userRef.once("value", function(snapshot) {
 				var importedData = snapshot.val();
 			
-				console.log("imported Data", importedData );
+			
 				
-				var movieRefs = [];
+				
 				for (var key in importedData) {
 			      var datawithID = importedData[key];
-			      console.log("data with id", datawithID);
 			      datawithID.key = key;
-			      console.log("key", key);
-			      datawithID.movieRefs=movieRefs;
-			      importArray[importArray.length] = datawithID;
-				}
-			  var objectForTemplate = {movieImg: importArray};
+			      $.ajax({ 
+                type: "GET",
+                dataType: "json",
+                url: "http://www.omdbapi.com/?i=" + key})
+			      .done(function(data) {    
+			      	console.log("data1", data);
+			      });
+			 		};
+		 		console.log("after for in", importedData );	
+			      
+			 //      importArray[importArray.length] = datawithID;
+				// }
+			  var objectForTemplate = {movie: importedData};
+
 			  console.log("objectForTemplate", objectForTemplate);
-			  	importArray = [];
+			  importArray = [];
 
 			  $("#view-user-home").html(templates.userhome(objectForTemplate));
+			  $(".rating").rating();
 			  $("#view-user-home").show();
 			  $("#view-find-movie").hide();
 			  $("#view-user-watched").hide();
 			  $("#view-user-unwatched").hide();
+              $("#view-user-favorites").hide();
 			  $("#view-search-my-movie").hide();
 			  $("#view-find-search-results").hide();
 			  
