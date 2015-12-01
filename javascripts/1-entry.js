@@ -28,6 +28,7 @@ define(
   "populatelogin",
   "eventhandlers",
   "FB-to-DOM-watched",
+  "filter-slider",
   "stars",
   "populateUserHomeView",
   "watched-btn-true"],
@@ -41,6 +42,7 @@ function(
   populateLogin,
   eventhandlers,
   FBtoDOMWatched,
+  filterSlider,
   stars,
   populateUserHomeView,
   watchedBtnTrue) {
