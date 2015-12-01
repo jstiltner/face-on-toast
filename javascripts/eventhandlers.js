@@ -30,6 +30,7 @@ define(function(require) {
 
 //shows user home view after user clicks 'log in' button
   $("body").on('click', ".poster", function (e) {
+    
     console.log("click!");
     infoModal.popup(event.target.id);
     $("#myModal").modal('show');
