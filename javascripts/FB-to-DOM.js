@@ -2,6 +2,7 @@ define(function(require) {
     var $ = require("jquery");
     var Firebase = require("firebase");
     var Q = require("q");
+    var stars = require("stars");
 
   //handlebars templates
     var templates = require("3-loadtemplates");
@@ -39,13 +40,15 @@ define(function(require) {
 			  var objectForTemplate = {movie: importedData};
 
 			  console.log("objectForTemplate", objectForTemplate);
-			  	importArray = [];
+			  importArray = [];
 
 			  $("#view-user-home").html(templates.userhome(objectForTemplate));
+			  $(".rating").rating();
 			  $("#view-user-home").show();
 			  $("#view-find-movie").hide();
 			  $("#view-user-watched").hide();
 			  $("#view-user-unwatched").hide();
+              $("#view-user-favorites").hide();
 			  $("#view-search-my-movie").hide();
 			  $("#view-find-search-results").hide();
 			  

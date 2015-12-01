@@ -7,13 +7,13 @@
       <span class="glyphicon glyphicon-trash"></span>
   </a>
 
-  
-   	 <!-- Watched Btns -->
 {{#if watched}}
-<input type="number" class="rating" data-min="1" data-max="5" data-step="1">
+    <input type="number" key ="{{key}}" class="rating" min="1" max="10" step="1">
 {{/if}}
 {{#unless watched}}
-    	<button type="button" class="btn watchedBtn">Watched</button>
+      <a href="#" class="deleteBtn" key="{{key}}">
+          <span class="glyphicon glyphicon-trash"></span>
+      </a>
 {{/unless}}
   </div>
 {{/each}}

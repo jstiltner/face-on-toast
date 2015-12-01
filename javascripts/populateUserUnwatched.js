@@ -13,6 +13,7 @@ define(function(require){
 	        $("#view-user-home").hide();
 	        $("#view-find-movie").hide();
 	        $("#view-user-watched").hide();
+            $("#view-user-favorites").hide();
 	        $("#view-search-my-movie").hide();
 	        $("#view-find-search-results").hide();
 	    }
