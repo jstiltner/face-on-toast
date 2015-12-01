@@ -11,7 +11,12 @@ define(function(require){
     //userallmovies: require("hbs!../templates/template-allmovies"),
     userunwatched: require("hbs!../templates/template-userunwatched"),
     userwatched: require("hbs!../templates/template-userwatched"),
-    userfavorites: require("hbs!../templates/templates-favorites")
+
+    userfavorites: require("hbs!../templates/templates-favorites"),
+
+    infomodal : require("hbs!../templates/template-infomodal"),
+    userfavorites: require("hbs!../templates/templates-favorites"),
+
   };
 
 });

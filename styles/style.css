@@ -35,7 +35,7 @@ a.delete:hover {
 
 .rating {
   glyphicon: true;
-  stars: 5; }
+  stars: 10; }
 
 #ratingScale {
   border: 0, solid, #f6931f;

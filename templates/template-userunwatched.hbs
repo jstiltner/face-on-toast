@@ -1,10 +1,14 @@
 {{#each movie}}
-	<div class="col-md-3 poster-container" id="{{this}}"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
+{{#if active}}
+{{#unless watched}}
+	<div class="col-md-3 poster-container" id="{{key}}"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' alt='{{Title}}' width="200px" height="300px">
 
   <a href="#" class="deleteBtn">
       <span key="{{@key}}" class="glyphicon glyphicon-trash"></span>
   </a>
   
 <!-- Watched Btns -->
-<button class="btn watchedBtn" id='{{imdbID}}'>Watched</button></div>
+<button class="btn watchedBtn" id='{{key}}'>Watched</button></div>
+{{/unless}}
+{{/if}}
 {{/each}}

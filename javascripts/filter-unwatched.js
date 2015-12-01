@@ -9,10 +9,10 @@ define(function(require) {
 
   return {
     filterUnwatched: function (e) {
-      var movie = $(this).parent('.movie');
-      post('/movie/' + $(this).data('id') + '/unwatched', function(data){
-        movie.fadeOut();
-      });
+      // var movie = $(this).parent('.movie');
+      // post('/movie/' + $(this).data('id') + '/unwatched', function(data){
+        // movie.fadeOut();
+      // });
       popUnwatched.popUnwatched();  
     }
   };

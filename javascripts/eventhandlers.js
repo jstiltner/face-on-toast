@@ -18,14 +18,27 @@ define(function(require) {
   var filterUnwatched = require("filter-unwatched");
   var filterFavorites = require("filter-favorites");
   var moviesFB = require("movies-to-FB");
+  var deletor = require("deletefromFB");
+  var infoModal = require("infopopup");
+  var fbToDOMunwatched = require("FB-to-DOM-unwatched");
   var watchedBtnTrue = require("watched-btn-true");
   var starEvent = require("starEvent");
+
+
 
 
 // ***** Event handlers for log-in/register
   //shows new user view after user clicks 'register' button
   $("body").on('click', "#register", function() {
     register.register();
+  });
+
+//shows user home view after user clicks 'log in' button
+  $("body").on('click', ".poster", function (e) {
+    
+    console.log("click!");
+    infoModal.popup(event.target.id);
+    $("#myModal").modal('show');
   });
 
   //shows user home view after user clicks 'log in' button
@@ -46,7 +59,8 @@ define(function(require) {
     var parentID = $(this).parent().attr("id");
     console.log("parentID", parentID);
     watchedBtnTrue.watchedTrue(parentID);
-    $(this).parent().remove();
+    $(this).remove();
+    // $(this).parent().remove();
   });
 
 // ***** Event handlers for movie filters
@@ -63,11 +77,13 @@ define(function(require) {
 
   //filters user's movies to show only their movies marked 'unwatched', when "unwatched" filter is clicked.
   $("body").on('click', "#unwatched", function() {
-    filterUnwatched.filterUnwatched();
+    fbToDOMunwatched.fbToDOMunwatched();
   });
 
   //filters user's movies to show only their favorited (5 stars) movies, when "favorites" filter is clicked.
+
   $("body").on('rating.change',"#ratingScale", function() {
+
     filterFavorites.filterFaves();
   });
 
@@ -82,7 +98,9 @@ define(function(require) {
   });
 
 // ***** star clicks
-  $("body").on('rating.change',".movieRating", function (event) {
+
+  $("body").on('rating.change',".rating", function (event) {
+
     //this is the minimum number of stars to filter a movie into your favorites view
     var faveMin = 7;
     console.log("this", $(this));

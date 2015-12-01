@@ -1,0 +1,47 @@
+working{{!-- cycles through the movies --}}
+{{#each movie}}
+{{Title}}
+		{{#with validpath}}
+			<div class="col-md-3 poster-container" id="{{key}}">
+				<img alt="{{Title}}" class="poster" id="{{key}}" src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' width="200px" height="300px">
+
+				<a href="#" class="deleteBtn" key="{{key}}">
+		      		<span class="glyphicon glyphicon-trash"></span>
+		  		</a>
+				
+				<button type="button" class="btn watchedBtn">Watched</button>
+			</div>
+		{{/if}}
+	{{!-- if the movie is already in Firebase, and watched = True --}}
+		{{#if watched}}
+			<div class="col-md-3 poster-container" id="{{@key}}">
+				<img alt="{{Title}}" class="poster" id="{{key}}" src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' width="200px" height="300px">
+
+				<a href="#" class="deleteBtn" key="{{@key}}">
+		      		<span class="glyphicon glyphicon-trash"></span>
+		  		</a>
+				
+				<button class="rate-button" id='{{imdbID}}'>Rate</button>
+			</div>
+		{{/if}}
+	{{!-- if the movie is not in Firebase --}}
+		{{#if }}
+			<div class="col-md-3 poster-container">
+				<img src='http://img.omdbapi.com/?apikey=7c212437&i={{imdbID}}' width="200px" height="300px">
+				
+				<button class="add-movie" id='{{imdbID}}'>Add Movie</button>
+			</div>
+		{{/if}}
+	
+	{{!-- if the movie is already in Firebase, and watched = True --}}
+		{{#if }}
+			<div class="col-md-3 poster-container" id="{{key}}"><img alt="{{Title}}" class="poster" id="{{key}}" src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' width="200px" height="300px">
+
+			<a href="#" class="deleteBtn" key="{{key}}">
+	      		<span class="glyphicon glyphicon-trash"></span>
+	  		</a>
+			
+			<button class="rate-button" id='{{imdbID}}'>Rate</button></div>
+		{{/if}}
+
+{{/each}}
