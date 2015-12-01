@@ -1,4 +1,4 @@
-define(function(require) {
+  define(function(require) {
     var $ = require("jquery");
     var Firebase = require("firebase");
     var Q = require("q");

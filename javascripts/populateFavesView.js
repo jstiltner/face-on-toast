@@ -4,6 +4,7 @@ define(function(require){
     var fbToDOMfaves = require("fb-to-DOM-faves");
     return {
         popFaves: function (fn) { 
+          console.log("favorites function fired" );
           fbToDOMfaves.fbToDOMfaves();
           $(".rating").rating();
           $("#view-new-user").hide();

@@ -26,7 +26,7 @@ define(function(require) {
           moviewithID.allMovieRefs = allMovieRefs;
           movieArray[movieArray.length] = moviewithID; 
         }
-        var movieForTemplate = {movieArray : movieArray};
+        var movieForTemplate = {movie : allMovieRefs};
         console.log("movieForTemplate", movieForTemplate);
         movieArray = [];
 
