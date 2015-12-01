@@ -8,7 +8,7 @@ define(function(require) {
   var templates = require("3-loadtemplates");
 
   return {
-    filterWatched: function (e) {
+    filterWatched: function(e) {
       popWatched.popWatched();
       console.log("function was ran");
     }

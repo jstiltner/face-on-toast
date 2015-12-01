@@ -3,17 +3,17 @@ define(function(require) {
   var uKey = null; 
 
   return {
-    getUid: function () {
+    getUid: function() {
       return uid;
     },
-    setUid: function (newId) {
+    setUid: function(newId) {
       uid = newId.uid;
     console.log("uid", newId);
     },
-    getKey: function () {
+    getKey: function() {
       return uKey;
     },
-    setKey: function (newKey) {
+    setKey: function(newKey) {
       uKey = newKey;
     }
   };

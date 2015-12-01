@@ -5,7 +5,7 @@ define(function(require){
 
 	return {
 	  
-	    popWatched: function (fn) { 
+	    popWatched: function(fn) { 
 			$("#view-user-watched").html(templates.userwatched());
 	        $("#view user-watched").show();
 	        $("#view-new-user").hide();

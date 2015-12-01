@@ -3,6 +3,7 @@ define(function(require) {
   var $ = require("jquery");
   var Q = require("q");
   var userStorage = require("5-user-data-storage");
+  var templates = require("3-loadtemplates");
     
   var moviesArray = [];
 
@@ -30,21 +31,21 @@ define(function(require) {
             var year = data.Year;
             var actors = data.Actors;
             var imdbID = data.imdbID;
-              var actorsArray = actors.split(", ");
+            var actorsArray = actors.split(", ");
 
   //Flash results to FB
         // build object to push to FB from data 
         var objectforFB = {
           'Title': title,
           'Year': year,
-          'Actors': actorsArray
+          'Actors': actorsArray,
+        };
+
   
-};
   console.log("objectforFB", objectforFB );
+  
   var newMovieRef = new Firebase('https://movie-history-djs.firebaseio.com/users/'+imdbID);      
     newMovieRef.set(objectforFB);
-
-        
 
             // if the call errors
             })
@@ -52,10 +53,8 @@ define(function(require) {
               deferred.reject(error);
             });
 
-
-
-
     console.log("click", this.id);
+    
     var nameRef = new Firebase('https://movie-history-djs.firebaseio.com/users/' + userStorage.getUid());
     console.log("userStorage.getUid()", userStorage.getUid());
 
@@ -83,5 +82,14 @@ define(function(require) {
         } /* end of for loop */ 
       }); /* end of snapshot */
     } /* end of showAddedMovies function */
-  }; /* end of return */
+  };
+
+  $(objectforFB).append(templates.userunwatched());
+
+  /* end of return */
 }); /* end of define function */
+
+        
+
+
+

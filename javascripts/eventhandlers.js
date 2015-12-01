@@ -28,20 +28,20 @@ define(function(require) {
   });
 
 //shows user home view after user clicks 'log in' button
-  $("body").on('click', ".poster", function (e) {
+  $("body").on('click', ".poster", function(e) {
     console.log("click!");
     infoModal.popup(event.target.id);
     $("#myModal").modal('show');
   });
 
   //shows user home view after user clicks 'log in' button
-  $("body").on('click', "#log-in", function (event) {
+  $("body").on('click', "#log-in", function(event) {
     login.login();
   });
 
 // ***** Search/add movies functionality 
   //searches movies when enter key is pressed
-  $("body").on('keyup', function (event) {
+  $("body").on('keyup', function(event) {
   	if (event.which===13) {
     findMovie.findMovie();
     }
@@ -49,32 +49,33 @@ define(function(require) {
 
 // ***** Event handlers for watched and favorite buttons
   //updates FB to make watched = true when "watched" button is clicked
-  $("body").on('click', '.watchedBtn', function (event) {
+  $("body").on('click', '.watchedBtn', function(event) {
     var parent = $(this).parent();
     var parentID = parent.attr("id");
     watchedFBtoDOM.watchedTrue(parentID);
     $(this).parent().remove();
+    console.log("watched button?");
   });
 
 // ***** Event handlers for movie filters
 
   //filters user's movies to show all the movies that the user has selected when user clicks "all movies"
-  $("body").on('click', '#allYourMovies', function (event) {
+  $("body").on('click', '#allYourMovies', function(event) {
     fbToDOM.fbToDOM();
   });
     
   //filters user's movies to show only their movies marked 'watched', when "watched" filter is clicked.
-  $("body").on('click', "#watched", function() {
+  $("body").on('click', "#watched", function(event) {
     filterWatched.filterWatched();
   });
 
   //filters user's movies to show only their movies marked 'unwatched', when "unwatched" filter is clicked.
-  $("body").on('click', "#unwatched", function() {
+  $("body").on('click', "#unwatched", function(event) {
     filterUnwatched.filterUnwatched();
   });
 
   //filters user's movies to show only their favorited (5 stars) movies, when "favorites" filter is clicked.
-  $("body").on('click', "#favorites", function() {
+  $("body").on('click', "#favorites", function(event) {
     filterFavorites.filterFavorites();
   });
 

@@ -11,7 +11,7 @@ define(function(require) {
 
   //log in user that is already registered
   return {
-    login: function (event) {
+    login: function(event) {
       ref.authWithPassword({
         email    : $("#email").val(),
         password : $("#password").val()

@@ -5,7 +5,7 @@ define(function(require){
   var fbToDOM = require("FB-to-DOM");
   return {
 
-	    popUserHomeView: function (fn) { 
+	    popUserHomeView: function(fn) { 
   			fbToDOM.fbToDOM();
     		$("#view-login").hide();
     		$("#view-filters").removeClass("hidden");

@@ -10,7 +10,7 @@ var templates = require("3-loadtemplates");
 		 var dataForTemplate = snapshot.val();
 
 		  $(".modal-body").html(templates.infomodal(dataForTemplate));
-		}), function (errorObject) {
+		}), function(errorObject) {
 
 		};
 	}
