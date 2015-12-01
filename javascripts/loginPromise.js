@@ -14,7 +14,6 @@ define(function(require) {
       login.loginFunct()
       .then(function (event) {
         console.log("then is firing", event);
-        $(".rating").rating();
       })
       .done();
     }

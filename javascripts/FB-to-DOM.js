@@ -32,15 +32,15 @@ define(function(require) {
 				}
 			  var objectForTemplate = {movieImg: importArray};
 			  console.log("objectForTemplate", objectForTemplate);
-			  	importArray = [];
+			  importArray = [];
 
 			  $("#view-user-home").html(templates.userhome(objectForTemplate));
 			  $(".rating").rating();
-
 			  $("#view-user-home").show();
 			  $("#view-find-movie").hide();
 			  $("#view-user-watched").hide();
 			  $("#view-user-unwatched").hide();
+              $("#view-user-favorites").hide();
 			  $("#view-search-my-movie").hide();
 			  $("#view-find-search-results").hide();
 			  

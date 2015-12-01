@@ -36,6 +36,7 @@ define(function(require) {
           $("#view-find-movie").hide();
           $("#view user-watched").hide();
           $("#view-user-unwatched").hide();
+          $("#view-user-favorites").hide();
           $("#view-search-my-movie").hide();
           $("#view-find-search-results").show();
         })

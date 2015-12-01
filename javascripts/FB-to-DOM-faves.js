@@ -1,4 +1,3 @@
-
 define(function(require) {
     var $ = require("jquery");
     var Firebase = require("firebase");
@@ -11,7 +10,7 @@ define(function(require) {
 
   return {
   
-      fbToDOMwatched: function(fn) { 
+      fbToDOMfaves: function(fn) { 
           console.log("fbToDOMwatched function fired.");
           //set up a few variables
             var userRef = new Firebase('https://faceontoast.firebaseio.com/users/' + userStorage.getUid());
@@ -22,7 +21,6 @@ define(function(require) {
         var allMovieRefs = [];
         for (var key in allMovieData) {
           var moviewithID = allMovieData[key];
-          console.log("movie with id", moviewithID);
           moviewithID.key = key;
           console.log("key", key);
           moviewithID.allMovieRefs = allMovieRefs;
@@ -32,7 +30,7 @@ define(function(require) {
         console.log("movieForTemplate", movieForTemplate);
         movieArray = [];
 
-        $("#view-user-watched").html(templates.userwatched(movieForTemplate));
+        $("#view-user-favorites").html(templates.userfavorites(movieForTemplate));
 
       }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
