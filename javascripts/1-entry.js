@@ -27,7 +27,7 @@ define(
   "delete-movie", 
   "populatelogin",
   "eventhandlers",
-  "watched-FB-to-DOM",
+  "FB-to-DOM-watched",
   "stars",
   "populateUserHomeView",
   "watched-btn-true"],
@@ -40,7 +40,7 @@ function(
   deleteMovie,
   populateLogin,
   eventhandlers,
-  watchedFBtoDOM,
+  FBtoDOMWatched,
   stars,
   populateUserHomeView,
   watchedBtnTrue) {
