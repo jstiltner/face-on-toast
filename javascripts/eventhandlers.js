@@ -9,7 +9,7 @@ define(function(require) {
   var templates = require("3-loadtemplates");
   var userStorage = require("5-user-data-storage");
   var register = require("register");
-  var login = require("4-login");
+  var loginPromise = require("loginPromise");
   var findMovie = require("findMovie");
   var deleteMovie = require("delete-movie");
   var moviesFB = require("movies-to-FB");
@@ -30,8 +30,7 @@ define(function(require) {
 
   //shows user home view after user clicks 'log in' button
   $("body").on('click', "#log-in", function (event) {
-    login.login();
-    $(".rating").rating();
+    loginPromise.login();
   });
 
 // ***** Search/add movies functionality 

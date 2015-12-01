@@ -5,13 +5,13 @@ define(function(require) {
   var userStorage = require("5-user-data-storage");
   var populateUserHomeView = require("populateUserHomeView");
   var moviesFB = require("movies-to-FB");
-
+  var Q = require("q");
   //get a reference to our Firebase app
   var ref = new Firebase("https://faceontoast.firebaseio.com");
-
+  var deferred = Q.defer();
   //log in user that is already registered
   return {
-    login: function (event) {
+    loginFunct: function () {
       ref.authWithPassword({
         email    : $("#email").val(),
         password : $("#password").val()
@@ -28,6 +28,8 @@ define(function(require) {
           populateUserHomeView.popUserHomeView();
         }
       });
+      console.log("deferred.promise",deferred.promise);
+      return deferred.promise;
     }
   };
 });

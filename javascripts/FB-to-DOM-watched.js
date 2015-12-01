@@ -26,7 +26,7 @@ console.log("allMovieData", allMovieData);
           moviewithID.allMovieRefs = allMovieRefs;
           movieArray[movieArray.length] = moviewithID; 
         }
-        var movieForTemplate = {movieArray};
+        var movieForTemplate = {movieArray : movieArray};
         console.log("movieForTemplate", movieForTemplate);
         movieArray = [];
 
