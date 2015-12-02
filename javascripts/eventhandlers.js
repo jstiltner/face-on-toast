@@ -39,6 +39,7 @@ define(function(require) {
     console.log("click!");
     infoModal.popup(event.target.id);
     $("#myModal").modal('show');
+
   });
 
   //shows user home view after user clicks 'log in' button
@@ -118,65 +119,70 @@ define(function(require) {
 
 
 // /////// Page Turning on user filtering. ///////
-  $("#ex6").slider();
+  $("#starz").slider();
 
-  // See All Movies
-  $(document).on("click", ".clickAll", function(e){
-    userSearchValue = "";
-    processedResults = null;
-    $("#all-user-title").show();
-    $("#ex6").attr("data-slider-value", 0);
-    $("#ex6SliderVal").text(0);
-    $("#ex6").slider('refresh');
-    beginWebApplication(auth, email, password);
-  });
+    var userStarValue;
+    var allStarResults = {};
+    var allMovieObject = {};
+    var userStarResults;
 
-  function hideall(){
-    $("div[watchtoggle='true']").hide();
-    $("div[watchtoggle='false']").hide();
-    $("#all-user-title").hide();
-    $(".search-result").parent().hide();
-  }
-  // See Watched Movies
-  $(document).on("click", ".clickWatch", function(e){
-    userSearchValue = "";
-    hideall();
-    $("#ex6").slider('refresh');
-    $("#ex6SliderVal").text(0);
-    $("div[watchtoggle='true']").show();
-    $("div[active='false']").hide();
-  });
+//   // See All Movies
+//   $(document).on("click", "#allYourMovies", function(e){
+//     userStarValue = "";
+//     userStarResults = null;
+//     $("#view-user-home").show();
+//     $("#starz").attr("data-slider-value", 0);
+//     $("#starzSliderVal").text(0);
+//     $("#starz").slider('refresh');
+//     // beginWebApplication(auth, email, password);
+//   });
 
-  // See UnWatched Movies
-  $(document).on("click", ".clickUnwatch", function(e){
-    console.log("You clicked the UNWatched button at top");
-    userSearchValue = "";
-    hideall();
-    $("#ex6").slider('refresh');
-    $("#ex6SliderVal").text(0);
-    $("div[watchtoggle='false']").show();
-    $("div[active='false']").hide();
-  });
+//   function hideAllMovies(){
+//     $("#view-user-watched").hide();
+//     $("#view-user-unwatched").hide();
+//     $("#view-user-home").hide();
+//     $("#view-find-search-results").parent().hide();
+//   }
+//   // See Watched Movies
+//   $(document).on("click", "#watched", function(e){
+//     userStarValue = "";
+//     hideAllMovies();
+//     $("#starz").slider('refresh');
+//     $("#starzSliderVal").text(0);
+//     $("#view-user-watched").show();
+//     // $("div[active='false']").hide();
+//   });
 
-  // Filter movies using the slider based on the rating
-  $("#ex6").on("change", function(slideEvt) {
+//   // See UnWatched Movies
+//   $(document).on("click", "#unwatched", function(e){
+//     console.log("You clicked the UNWatched button at top");
+//     userStarValue = "";
+//     hideAllMovies();
+//     $("#starz").slider('refresh');
+//     $("#starzSliderVal").text(0);
+//     $("#view-user-unwatched").show();
+//     // $("div[active='false']").hide();
+//   });
 
-    $("#ex6SliderVal").text(slideEvt.value.newValue);
+//   // Filter movies using the slider based on the rating
+//   $("#starz").on("change", function(slideEvt) {
 
-    // If it's on zero, no effect on filters/search results
-    if (slideEvt.value.newValue === 0) {
-      $("div[watchtoggle='true']").show();
-      $("div[watchtoggle='false']").show();
-      $("#all-user-title").show();
-      $(".search-result").parent().show();
-      $("div[active='false']").hide();
-    } else {
-      hideall();
-      $("div[fave='"+slideEvt.value.newValue+"']").show(); //Otherwise it takes the slider value and gets the attributes with matching ratings
-      $("div[active='false']").hide();
-    }
+//     $("#starzSliderVal").text(slideEvt.value.newValue);
 
-  });
+//     // If it's on zero, no effect on filters/search results
+//     if (slideEvt.value.newValue === 0) {
+//       $("#view-user-watched").show();
+//       $("#view-user-unwatched").show();
+//       $("#view-user-home").show();
+//       $("#view-find-search-results").parent().show();
+//       // $("div[active='false']").hide();
+//     } else {
+//       hideAllMovies();
+//       $("div[fave='"+slideEvt.value.newValue+"']").show(); //Otherwise it takes the slider value and gets the attributes with matching ratings
+//       // $("div[active='false']").hide();
+//     }
+
+//   });
 
 });
 

@@ -1,4 +1,8 @@
 /********** HEADER **************/
+body {
+  font-family: Helvetica;
+}
+
 header {
   background-color: lightgray;
   padding: 15px;
@@ -15,6 +19,7 @@ header div {
 .watchedBtn {
   display: block;
   margin-top: 12px;
+  margin-bottom: 5px;
 }
 
 .add-movie {
@@ -62,7 +67,7 @@ content: '\2605'; /*unicode star character*/
 color: yellow;
 }
 
-#ex6SliderVal {
+#starzSliderVal {
   margin: 5px;
   font-size: 15px;
 }
