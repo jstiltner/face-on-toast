@@ -17,6 +17,11 @@ header div {
   margin-top: 12px;
 }
 
+.add-movie {
+  display: block;
+  margin-top: 12px;
+}
+
 #view-filters {
   background-color: white;
   padding: 15px;

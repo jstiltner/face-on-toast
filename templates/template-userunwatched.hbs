@@ -1,14 +1,15 @@
 {{#each movie}}
-{{#if active}}
-{{#unless watched}}
-	<div class="col-md-3 poster-container" id="{{key}}"><img src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' alt='{{Title}}' width="200px" height="300px" fave="{{rating}}">
-
-  <a href="#" class="deleteBtn">
-      <span key="{{@key}}" class="glyphicon glyphicon-trash"></span>
-  </a>
-  
-<!-- Watched Btns -->
-<button class="btn watchedBtn" id='{{key}}'>Watched</button></div>
-{{/unless}}
-{{/if}}
+  {{#if active}}
+    {{#unless watched}}
+    	<div class="col-md-3 poster-container" id="{{key}}">
+        <img src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' alt='{{Title}}' width="200px" height="300px" fave="{{rating}}">
+        <!-- Delete Btn -->
+        <a href="#" class="deleteBtn">
+            <span key="{{@key}}" class="glyphicon glyphicon-trash"></span>
+        </a>
+        <!-- Watched Btn -->
+        <button class="btn btn-xs watchedBtn btn-success" id='{{key}}'>Watched</button>
+      </div>
+     {{/unless}} 
+  {{/if}}
 {{/each}}

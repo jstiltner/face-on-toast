@@ -1,21 +1,18 @@
 <!-- Movie Div *** take out comments and put double handle bars around eaches and visibilities-->
 {{#each movie}}
-{{#if active}}
+  {{#if active}}
+    <div class="col-md-3 poster-container" id="{{key}}">
+      <img alt='{{Title}}' class='poster' id='{{key}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{key}}" width="200px" height="300px" fave="{{rating}}">
 
-  <div class="col-md-3 poster-container" id="{{key}}"><img alt='{{Title}}' class='poster' id='{{key}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{key}}" width="200px" height="300px" fave="{{rating}}">
-
-  <a href="#" class="deleteBtn" key="{{key}}">
-      <span class="glyphicon glyphicon-trash"></span>
-  </a>
-
-{{#if watched}}
-     <input type="number" id="{{key}}" title="{{Title}}" class="rating" data-min="0" data-max="10" data-step="1" data-size="xs" value='{{rating}}'>
-{{/if}}
-{{#unless watched}}
-      <button class="btn btn-xs watchedBtn btn-success" id='{{key}}'>Watched</button></div>
-
+      <a href="#" class="deleteBtn" key="{{key}}">
+          <span class="glyphicon glyphicon-trash"></span>
       </a>
-{{/unless}}
-  </div>
-{{/if}}
+      {{#if watched}}
+        <input type="number" id="{{key}}" title="{{Title}}" class="rating rating-xs" data-min="0" data-max="10" data-step="1" data-size="xs" value='{{rating}}'>
+      {{/if}}
+      {{#unless watched}}
+        <button class="btn btn-xs watchedBtn btn-success" id='{{key}}'>Watched</button>
+      {{/unless}}
+    </div>
+  {{/if}}
 {{/each}}
