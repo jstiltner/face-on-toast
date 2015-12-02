@@ -12,8 +12,13 @@ header div {
   display: inline-block;
   padding: 0px 20px; }
 
+.watchedBtn {
+  display: block;
+  margin-top: 12px;
+}
+
 #view-filters {
-  background-color: #fffff0;
+  background-color: white;
   padding: 15px;
   margin: 20px;
   display: block; }
@@ -43,3 +48,34 @@ a.delete:hover {
   display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */
+
+//slider
+.slider-handle.custom::before {
+line-height: 20px;
+font-size: 20px;
+content: '\2605'; /*unicode star character*/
+color: yellow;
+}
+
+#ex6SliderVal {
+  margin: 5px;
+  font-size: 15px;
+}
+
+#slidey-thing{
+  background-color: white;
+  border: none;
+  margin-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: $primarycolor_light;
+  letter-spacing: 2px;
+  font-size: 14px;
+  border-left: 3px solid white;
+  height: 32px;
+
+  &:hover {
+    cursor: default;
+  }
+
+}

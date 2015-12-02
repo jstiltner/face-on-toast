@@ -7,11 +7,13 @@ require.config({
     'q': '../lib/bower_components/q/q',
     'firebase': '../lib/bower_components/firebase/firebase',
     'bootstrap': '../lib/bower_components/bootstrap/dist/js/bootstrap.min',
-    'stars': '../lib/bower_components/bootstrap-star-rating/js/star-rating.min'
+    'stars': '../lib/bower_components/bootstrap-star-rating/js/star-rating.min',
+    'slider': '../lib/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min'
   },
   shim: {
     'bootstrap': ['jquery'],
     'stars' : ['bootstrap'],
+    'slider' : ['bootstrap'],
     'firebase': {
       exports: 'Firebase'
     }
@@ -29,6 +31,7 @@ define(
   "eventhandlers",
   "FB-to-DOM-watched",
   "filter-slider",
+  "slider",
   "stars",
   "populateUserHomeView",
   "watched-btn-true"],
@@ -43,6 +46,7 @@ function(
   eventhandlers,
   FBtoDOMWatched,
   filterSlider,
+  slider,
   stars,
   populateUserHomeView,
   watchedBtnTrue) {

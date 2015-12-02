@@ -2,17 +2,17 @@
 {{#each movie}}
 {{#if active}}
 
-  <div class="col-md-3 poster-container" id="{{key}}"><img alt='{{Title}}' class='poster' id='{{key}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{key}}" width="200px" height="300px">
+  <div class="col-md-3 poster-container" id="{{key}}"><img alt='{{Title}}' class='poster' id='{{key}}' src="http://img.omdbapi.com/?apikey=7c212437&i={{key}}" width="200px" height="300px" fave="{{rating}}">
 
   <a href="#" class="deleteBtn" key="{{key}}">
       <span class="glyphicon glyphicon-trash"></span>
   </a>
 
 {{#if watched}}
-    <input type="number" key ="{{key}}" class="rating" min="1" max="10" step="1" value='{{rating}}'>
+     <input type="number" id="{{key}}" title="{{Title}}" class="rating" data-min="0" data-max="10" data-step="1" data-size="xs" value='{{rating}}'>
 {{/if}}
 {{#unless watched}}
-      <button class="btn watchedBtn" id='{{key}}'>Watched</button></div>
+      <button class="btn btn-xs watchedBtn btn-success" id='{{key}}'>Watched</button></div>
 
       </a>
 {{/unless}}

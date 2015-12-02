@@ -5,13 +5,14 @@
     <div class="col-md-3 poster-container" id="{{key}}">
 
         <img alt="{{Title}}"
-        src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' width="200px" height="300px">
+        src='http://img.omdbapi.com/?apikey=7c212437&i={{key}}' width="200px" height="300px" fave="{{rating}}">
 
         <a href="#" class="deleteBtn" key="{{key}}">
             <span class="glyphicon glyphicon-trash"></span>
         </a>
 
-        <input type="number" id="{{key}}" class="rating" data-min="1" data-max="10" data-step="1" value='{{rating}}'>
+        <input type="number" id="{{key}}" title="{{Title}}" class="rating" data-min="0" data-max="10" data-step="1" value='{{rating}}'>
+       
     </div>
   {{/if}}
 {{/if}}

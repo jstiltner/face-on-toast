@@ -10,16 +10,11 @@ define(function(require) {
   return {
     filterSlider: function (e) {
       
-      $( "#slider-range" ).slider({
-        range: true,
-        min: 0,
-        max: 10,
-        values: [ 0, 10 ],
-        slide: function( event, ui ) {  $( "#rating" ).val( "$" + ui.values[ 0 ] + " -   $" + ui.values[ 1 ] );
-        }
-        });
+      // Instantiate a slider
+      var mySlider = $("input.slider").slider();
 
-      $( "#rating" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $(  "#slider-range" ).slider( "values", 1 ) );
+      // Call a method on the slider
+      var value = mySlider.slider('getValue');
 
     }
   };

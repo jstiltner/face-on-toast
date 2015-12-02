@@ -112,6 +112,72 @@ define(function(require) {
 });
 
 
+
+
+
+
+
+// /////// Page Turning on user filtering. ///////
+  $("#ex6").slider();
+
+  // See All Movies
+  $(document).on("click", ".clickAll", function(e){
+    userSearchValue = "";
+    processedResults = null;
+    $("#all-user-title").show();
+    $("#ex6").attr("data-slider-value", 0);
+    $("#ex6SliderVal").text(0);
+    $("#ex6").slider('refresh');
+    beginWebApplication(auth, email, password);
+  });
+
+  function hideall(){
+    $("div[watchtoggle='true']").hide();
+    $("div[watchtoggle='false']").hide();
+    $("#all-user-title").hide();
+    $(".search-result").parent().hide();
+  }
+  // See Watched Movies
+  $(document).on("click", ".clickWatch", function(e){
+    userSearchValue = "";
+    hideall();
+    $("#ex6").slider('refresh');
+    $("#ex6SliderVal").text(0);
+    $("div[watchtoggle='true']").show();
+    $("div[active='false']").hide();
+  });
+
+  // See UnWatched Movies
+  $(document).on("click", ".clickUnwatch", function(e){
+    console.log("You clicked the UNWatched button at top");
+    userSearchValue = "";
+    hideall();
+    $("#ex6").slider('refresh');
+    $("#ex6SliderVal").text(0);
+    $("div[watchtoggle='false']").show();
+    $("div[active='false']").hide();
+  });
+
+  // Filter movies using the slider based on the rating
+  $("#ex6").on("change", function(slideEvt) {
+
+    $("#ex6SliderVal").text(slideEvt.value.newValue);
+
+    // If it's on zero, no effect on filters/search results
+    if (slideEvt.value.newValue === 0) {
+      $("div[watchtoggle='true']").show();
+      $("div[watchtoggle='false']").show();
+      $("#all-user-title").show();
+      $(".search-result").parent().show();
+      $("div[active='false']").hide();
+    } else {
+      hideall();
+      $("div[fave='"+slideEvt.value.newValue+"']").show(); //Otherwise it takes the slider value and gets the attributes with matching ratings
+      $("div[active='false']").hide();
+    }
+
+  });
+
 });
 
     
